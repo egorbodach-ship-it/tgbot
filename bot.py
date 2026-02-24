@@ -1655,8 +1655,17 @@ async def msg_router(message: types.Message, state: FSMContext, bot: Bot):
 
 # ============ ЗАПУСК ============
 
+# ... (код выше) ...
+
+# ============ ЗАПУСК ============
+
 async def main():
     bot = Bot(token=BOT_TOKEN)
+    
+    # --- ДОБАВЬ ВОТ ЭТУ СТРОКУ ---
+    await bot.delete_webhook(drop_pending_updates=True) 
+    # -----------------------------
+
     for a in ADMIN_IDS:
         try:
             await bot.send_message(a,
@@ -1670,6 +1679,8 @@ async def main():
     dp.include_router(router)
     logging.basicConfig(level=logging.INFO)
     print("⛏ Steal a Mob бот запущен!")
+    
+    # Теперь polling заработает
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
