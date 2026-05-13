@@ -1,0 +1,56 @@
+menu_title: "&f௪௑"
+open_command:
+  - rtp
+register_command: true
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+items:
+  'rtp_default':
+      material: WATER_BUCKET
+      item_flags: 
+      - HIDE_ATTRIBUTES
+      slot: 20
+      display_name: '&#FF5700Б&#FE5700л&#FC5600и&#FB5600з&#FA5500к&#F95500а&#F75400я &#F55400т&#F45300е&#F25300л&#F15200е&#F05200п&#EF5200о&#ED5100р&#EC5100т&#EB5000а&#EA5000ц&#E84F00и&#E74F00я'
+      lore:
+        - ''
+        - '&#FF5700┃ &7Дальность: &#FF57001500 блоков'
+        - '&#FF5700┃ &7Опасность: &eСередняя'
+        - '&#FF5700┃ &7Доступно: &aВСЕМ'
+        - ''
+        - '&aНажмите, что бы телепортироваться'
+      left_click_commands:
+        - '[player] randomteleport safe'
+        - '[close]'
+  'rtp_near':
+      material: ENDER_EYE
+      item_flags: 
+      - HIDE_ATTRIBUTES
+      slot: 22
+      display_name: '&#FF5700Т&#FE5700е&#FD5600л&#FC5600е&#FC5600п&#FB5600о&#FA5500р&#F95500т&#F85500а&#F75400ц&#F65400и&#F65400я &#F45300р&#F35300я&#F25300д&#F15200о&#F05200м &#EF5200с &#ED5100и&#EC5100г&#EB5000р&#EA5000о&#EA5000к&#E95000а&#E84F00м&#E74F00и'
+      lore:
+        - ''
+        - '&#FF5700┃ &7Дальность: &#FF5700По всей карте'
+        - '&#FF5700┃ &7Опасность: &cВысокая'
+        - '&#FF5700┃ &7Доступно: от &#00B09B&lɴ&#1EB588&lᴇ&#3CBA75&lʙ&#5ABF63&lᴜ&#78C450&lʟ&#96C93D&lᴀ'
+        - ''
+        - '&aНажмите, что бы телепортироваться'
+      left_click_commands:
+        - '[player] randomteleport near'
+        - '[close]'
+  'rtp_far':
+      material: LAVA_BUCKET
+      item_flags: 
+      - HIDE_ATTRIBUTES
+      slot: 24
+      display_name: '&#FF5700Д&#FE5700а&#FC5600л&#FB5600ь&#FA5500н&#F95500а&#F75400я &#F55400т&#F45300е&#F25300л&#F15200е&#F05200п&#EF5200о&#ED5100р&#EC5100т&#EB5000а&#EA5000ц&#E84F00и&#E74F00я'
+      lore:
+        - ''
+        - '&#FF5700┃ &7Дальность: &#FF57002500 блоков'
+        - '&#FF5700┃ &7Опасность: &aНизкая'
+        - '&#FF5700┃ &7Доступно: от &#DCE35B&lᴛ&#DCE35B&lʀ&#DCE35B&lɪ&#DEBC5C&lᴛ&#E1945C&lᴏ&#E36D5D&lɴ'
+        - ''
+        - '&aНажмите, что бы телепортироваться'
+      left_click_commands:
+        - '[player] randomteleport far'
+        - '[close]'

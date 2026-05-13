@@ -1,0 +1,373 @@
+menu_title: "&f௪௤"
+open_command:
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+items:
+  'Firework_Rocket':
+    display_name: '&#FF5700&lФ&#FC5600&lе&#F95500&lй&#F65400&lе&#F35300&lр&#F05200&lв&#ED5100&lе&#EA5000&lр&#E74F00&lк'
+    slot: 5
+    material: Firework_Rocket
+    amount: 16
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e5500 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 5500
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 5500'
+    - '[console] give %player_name% FireworkRocket 16'
+    - '[refresh]'
+    
+  'golden_apple':
+    display_name: '&#FF5700&lЗ&#FD5600&lо&#FB5600&lл&#F95500&lо&#F85500&lт&#F65400&lо&#F45300&lе &#F05200&lя&#EE5100&lб&#ED5100&lл&#EB5000&lо&#E95000&lк&#E74F00&lо'
+    slot: 12
+    material: golden_apple
+    amount: 16
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e25000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 25000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 25000'
+    - '[console] give %player_name% GoldApple 16'
+    - '[refresh]'
+
+  'totem':
+    display_name: '&#FF5700&lТ&#FD5600&lо&#FC5600&lт&#FA5500&lе&#F95500&lм &#F55400&lб&#F45300&lе&#F25300&lс&#F15200&lс&#EF5200&lм&#ED5100&lе&#EC5100&lр&#EA5000&lт&#E95000&lи&#E74F00&lя'
+    slot: 13
+    material: totem_of_undying
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e75000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 75000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 75000'
+    - '[console] give %player_name% totem 1'
+    - '[refresh]'
+
+  'ender_pearl':
+    display_name: '&#FF5700&lЭ&#FD5600&lн&#FB5600&lд&#F85500&lе&#F65400&lр &#F25300&lЖ&#F05200&lе&#EE5100&lм&#EB5000&lч&#E95000&lу&#E74F00&lг'
+    slot: 14
+    material: ender_pearl
+    amount: 16
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e18000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 18000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 18000'
+    - '[console] give %player_name% EnderPearl 16'
+    - '[refresh]'
+
+  'chorus_fruit':
+    display_name: '&#FF5700&lП&#FD5600&lл&#FA5500&lо&#F85500&lд &#F35300&lх&#F15200&lо&#EE5100&lр&#EC5100&lу&#E95000&lс&#E74F00&lа'
+    slot: 19
+    material: chorus_fruit
+    amount: 32
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e60000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570032 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 60000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 60000'
+    - '[console] give %player_name% ChorusFruit 32'
+    - '[refresh]'
+
+  'exp_bottle':
+    display_name: '&#FF5700&lП&#FD5600&lу&#FB5600&lз&#F95500&lы&#F75400&lр&#F55400&lё&#F35300&lк &#EF5200&lо&#ED5100&lп&#EB5000&lы&#E95000&lт&#E74F00&lа'
+    slot: 20
+    material: experience_bottle
+    amount: 64
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e16500 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 16500
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 16500'
+    - '[console] give %player_name% ExperienceBottle 64'
+    - '[refresh]'
+
+  'steak':
+    display_name: '&#FF5700&lС&#F95500&lт&#F35300&lе&#ED5100&lй&#E74F00&lк'
+    slot: 21
+    material: cooked_beef
+    amount: 64
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e15000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 15000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 15000'
+    - '[console] give %player_name% CookedBeef 64'
+    - '[refresh]'
+
+  'shulker_box':
+    display_name: '&#FF5700&lШ&#FD5600&lа&#FC5600&lл&#FA5500&lк&#F85500&lе&#F65400&lр&#F55400&lо&#F35300&lв&#F15200&lы&#F05200&lй &#EC5100&lя&#EA5000&lщ&#E95000&lи&#E74F00&lк'
+    slot: 22
+    material: shulker_box
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e45000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 45000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 45000'
+    - '[console] give %player_name% ShulkerBox 1'
+    - '[refresh]'
+
+  'cobweb':
+    display_name: '&#FF5700&lП&#FB5600&lа&#F75400&lу&#F35300&lт&#EF5200&lи&#EB5000&lн&#E74F00&lа'
+    slot: 23
+    material: cobweb
+    amount: 16
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e17500 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 17500
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 17500'
+    - '[console] give %player_name% Cobweb 16'
+    - '[refresh]'
+
+  'gunpowder':
+    display_name: '&#FF5700&lП&#F95500&lо&#F35300&lр&#ED5100&lо&#E74F00&lх'
+    slot: 24
+    material: gunpowder
+    amount: 32
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e60000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570032 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 60000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 60000'
+    - '[console] give %player_name% Gunpowder 32'
+    - '[refresh]'
+
+  'oak_log':
+    display_name: '&#FF5700&lД&#FD5600&lу&#FB5600&lб&#F95500&lо&#F85500&lв&#F65400&lо&#F45300&lе &#F05200&lб&#EE5100&lр&#ED5100&lе&#EB5000&lв&#E95000&lн&#E74F00&lо'
+    slot: 25
+    material: oak_log
+    amount: 64
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e4500 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 4500
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 4500'
+    - '[console] give %player_name% Oaklog 64'
+    - '[refresh]'
+
+  'shield':
+    display_name: '&#FF5700&lЩ&#F35300&lи&#E74F00&lт'
+    slot: 30
+    material: shield
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e12500 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 12500
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 12500'
+    - '[console] give %player_name% Shield 1'
+    - '[refresh]'
+
+  'arrow':
+    display_name: '&#FF5700&lС&#FA5500&lт&#F55400&lр&#F15200&lе&#EC5100&lл&#E74F00&lа'
+    slot: 31
+    material: arrow
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e6000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 6000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 6000'
+    - '[console] give %player_name% Arrow 64'
+    - '[refresh]'
+
+  'ender_chest':
+    display_name: '&#FF5700&lЭ&#FD5600&lн&#FB5600&lд&#F85500&lе&#F65400&lр&#F45300&l-&#F25300&lс&#F05200&lу&#EE5100&lн&#EB5000&lд&#E95000&lу&#E74F00&lк'
+    slot: 32
+    material: ender_chest
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &e11000 $&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &e%vault_eco_balance_commas% $&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 11000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 11000'
+    - '[console] give %player_name% Enderchest 1'
+    - '[refresh]'
+
+  'back_button':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+    - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+    - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateRESMENU'
+    right_click_commands:
+      - '[openguimenu] donateRESMENU'
+      
+  'elytra':
+    display_name: '&x&F&F&0&0&0&0&lЭ&x&E&A&0&5&0&3&lл&x&D&4&0&B&0&7&lи&x&B&F&1&0&0&A&lт&x&A&9&1&6&0&E&lр&x&9&4&1&B&1&1&lы'
+    slot: 3
+    material: elytra
+    lore:
+    - '&r'
+    - '&r &#FF5700▲ &r&#aaaaaaЦена: &#FFD700300,000 монет&r'
+    - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+    - '&r &#FF5700▼ &r&#aaaaaaБаланс: &#FFD700%vault_eco_balance_formatted% монет&r'
+    - '&r'
+    - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%vault_eco_balance%'
+          output: 300000
+      deny_commands:
+      - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fмонет'
+    left_click_commands:
+    - '[console] eco take %player_name% 300000'
+    - '[message] &7&l[&#FFD700&l$&7&l] &8> &7С вашего баланса списано: &#FFD700300,000 монет'
+    - '[console] give %player_name% elytra 1'
+    - '[refresh]'
