@@ -1,0 +1,104 @@
+menu_title: "ௐ"
+open_command: media
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+register_command: true
+open_requirement:
+  requirements:
+    permission:
+      type: has permission
+      permission: media.nevermine
+      deny_commands:
+      - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fправ'
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+  'whiteplusrun_yes':
+    material: chest_minecart
+    slot: 22
+    priority: 1
+    display_name: '&7« &x&F&B&5&4&0&DБесплатные киты &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получать свои'
+      - '&#FF5700┃&f Киты. После нажатия у вас'
+      - '&#FF5700┃&f В инвентаре появится шалкера'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите чтобы &aзабрать &fкиты'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_media.cooldown%'
+          output: 'no'
+    left_click_commands:
+    - '[console] lp user %player_name% permission settemp media.cooldown true 3d'
+    - '[console] sitems give %player_name% media'
+    - '[console] sitems give %player_name% media'
+    - '[console] sitems give %player_name% media'
+    - '[close]'
+  'whiteplusrun_no':
+    material: minecart
+    slot: 22
+    priority: 3
+    update: true
+    display_name: '&7« &x&F&B&5&4&0&DБесплатные киты &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получать свои'
+      - '&#FF5700┃&f Киты. После нажатия у вас'
+      - '&#FF5700┃&f В инвентаре появится шалкера'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fПопробуйте &cзабрать &fпозже'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_media.cooldown%'
+          output: 'yes'

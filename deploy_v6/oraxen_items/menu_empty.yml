@@ -1,0 +1,13 @@
+# Invisible item for custom GUI overlay technique
+# Place this at: /plugins/Oraxen/items/menu_empty.yml
+# After upload: oraxen reload all
+menu_empty:
+  displayname: "<black> "
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    generate_model: true
+    parent_model: "item/generated"
+    textures:
+      - items/empty
+    custom_model_data: 30000
