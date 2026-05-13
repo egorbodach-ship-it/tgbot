@@ -1,0 +1,211 @@
+menu_title: "ெ"
+open_command:
+- menu
+- menus
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 54
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 21
+      - 23
+      - 25
+      - 26
+      - 27
+      - 28
+      - 30
+      - 32
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 51
+      - 52
+      - 53
+  '13':
+    display_name: '&#FF5700И&#FC5600в&#F85500е&#F55400н&#F15200т&#EE5100ы &#EA5000с&#E74F00е&#E44E00р&#E04D00в&#DD4C00е&#DA4B00р&#D64A00а'
+    slot: 13
+    material: BEACON
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaЗдесь собраны все уникальные&r'
+    - '&#FF5700┃ &r&#aaaaaaсобытия и ивенты нашего сервера!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы открыть меню&r'
+    left_click_commands:
+      - '[player] event'
+    right_click_commands:
+      - '[player] event'
+
+  '20':
+    display_name: '&#FF5700С&#FB5600к&#F75400у&#F35300п&#EF5200щ&#EB5000и&#E74F00к'
+    slot: 20
+    material: hopper_minecart
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaУ нас имеется уникальный &r&#aaaaaaскупщик&r'
+    - '&#FF5700┃ &r&#aaaaaaс хорошими плюшками, по типу авто-скупки!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    left_click_commands:
+      - '[player] seller'
+    right_click_commands:
+      - '[player] seller'
+      
+  '22':
+    display_name: '&#FF5700П&#FC5600в&#F95500п&#F65400-&#F35300А&#F05200р&#ED5100е&#EA5000н&#E74F00а'
+    slot: 22
+    material: diamond_sword
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaАрена, на которой можно&r'
+    - '&#FF5700┃ &r&#aaaaaaустраивать полный хаус и замесы!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    enchantments:
+    - KNOCKBACK;1
+    left_click_commands:
+      - '[player] warp pvp'
+    right_click_commands:
+      - '[player] warp pvp'
+      
+  '24':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н&#EE5100н&#EA5000и&#E74F00к'
+    slot: 24
+    material: gold_nugget
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaХочешь торговаться другой валютой?&r'
+    - '&#FF5700┃ &r&#aaaaaaНе вопрос, телепортируйся и меняй!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    left_click_commands:
+      - '[player] obmen'
+    right_click_commands:
+      - '[player] obmen'
+      
+  '29':
+    display_name: '&x&F&F&0&0&F&8П&x&F&F&0&E&C&Fо&x&F&F&1&C&A&5р&x&F&F&2&A&7&Cт&x&F&F&3&7&5&3а&x&F&F&4&5&2&9л&x&F&F&5&3&0&0ы'
+    slot: 29
+    material: end_portal_frame
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaКаждому свое место, как в&r'
+    - '&#FF5700┃ &r&#aaaaaaнижнем мире, так и в эндер-мире!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    left_click_commands:
+      - '[player] portals'
+    right_click_commands:
+      - '[player] portals'
+      
+  '31':
+    display_name: '&#FF5700А&#FD5600Ф&#FB5600К&#F95500-&#F75400З&#F55400а&#F35300р&#F15200а&#EF5200б&#ED5100о&#EB5000т&#E95000о&#E74F00к'
+    slot: 31
+    material: campfire
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaХочешь халявы? тебе сюда, тут&r'
+    - '&#FF5700┃ &r&#aaaaaaты сможешь согреться и получить рублей!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    left_click_commands:
+      - '[player] warp afk'
+    right_click_commands:
+      - '[player] warp afk'
+      
+  '33':
+    display_name: '&#FF5700К&#FB5600е&#F75400й&#F35300с&#EF5200и&#EB5000к&#E74F00и'
+    slot: 33
+    material: ender_chest
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaОткрытие всеми известных кейсов&r'
+    - '&#FF5700┃ &r&#aaaaaaпроисходит тут! телепортируйся, везунчик!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться&r'
+    left_click_commands:
+      - '[player] warp case'
+    right_click_commands:
+      - '[player] warp case'
+      
+  '48':
+    display_name: '&#FF5700Н&#FD5600а&#FC5600г&#FA5500р&#F95500а&#F75400д&#F55400ы &#F25300з&#F15200а &#ED5100в&#EC5100р&#EA5000е&#E95000м&#E74F00я'
+    slot: 48
+    material: chest_minecart
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaПолучайте много разных наград&r'
+    - '&#FF5700┃ &r&#aaaaaaза наигранное время на сервере!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    left_click_commands:
+      - '[player] free'
+    right_click_commands:
+      - '[player] free'
+      
+  '49':
+    display_name: '&#FF5700Д&#FC5600о&#FA5500н&#F75400а&#F45300т &#EF5200м&#EC5100е&#EA5000н&#E74F00ю'
+    slot: 49
+    material: fire_charge
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaХотите быть выделенным на сервере&r'
+    - '&#FF5700┃ &r&#aaaaaaи помочь проекту в развитии? Тебе сюда!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    left_click_commands:
+      - '[player] donate'
+    right_click_commands:
+      - '[player] donate'
+      
+  '50':
+    display_name: '&#FF5700М&#FC5600а&#F85500г&#F55400а&#F15200з&#EE5100и&#EA5000н&#E74F00ы'
+    slot: 50
+    material: pufferfish
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaМагазины? Да, тебе не послышалось&r'
+    - '&#FF5700┃ &r&#aaaaaaих несколько, переходи скорее!&r'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    left_click_commands:
+      - '[player] shop'
+    right_click_commands:
+      - '[player] shop'

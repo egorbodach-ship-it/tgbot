@@ -1,0 +1,151 @@
+# ==============================================================
+#   SolomonGrief | DeluxeMenus | portals.yml
+# --------------------------------------------------------------
+#   Подменю "Порталы" в фирменном стиле сервера:
+#     - рамка: оранжевые углы, чёрные края, серый внутренний filler
+#     - заголовок `&8&l> &0Название` по стандарту сервера
+#     - два предмета по центру (слоты 20/24)
+#     - кнопка "Назад" внизу по центру (слот 40), spectral_arrow
+#     - звук открытия: BLOCK_BARREL_OPEN
+#
+#   Положи файл в `plugins/DeluxeMenus/gui_menus/portals.yml` и
+#   выполни в консоли `/dm reload`. Команда `/portals` или
+#   `/порталы` откроет меню. Также вызывается через
+#   `[openguimenu] portals` из любого другого меню.
+#
+#   Если у тебя другие warp-поинты — поменяй `warp nether` /
+#   `warp end` на свои команды (`spawn nether`, `tp @s world_nether
+#   x y z`, любой executor).
+# ==============================================================
+
+menu_title: "ோ"
+open_command:
+  - portals
+  - порталы
+size: 45
+update_interval: 10
+
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 21
+      - 22
+      - 23
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+      - 44
+
+  # =================== FRAME: ORANGE CORNERS ===================
+  portal_nether:
+    material: FIRE_CHARGE
+    slot: 20
+    display_name: '&#FF5700&lПортал в Ад'
+    lore:
+      - '&r'
+      - '&r &#FF5700┃ &r&#aaaaaaОтправиться в &cНижний мир.'
+      - '&r &#FF5700┃ &r&#aaaaaaЗдесь добывают незерит,'
+      - '&r &#FF5700┃ &r&#aaaaaaкварц и адские сокровища.'
+      - '&r'
+      - '&r &#FF5700▶ &r&fМир: &c&lnether'
+      - '&r'
+      - '&aНажмите, чтобы &cпереместиться'
+    enchantments:
+      - DURABILITY;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_ENDERMAN_TELEPORT'
+      - '[player] warp netherportal'
+    right_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_ENDERMAN_TELEPORT'
+      - '[player] warp netherportal'
+
+  # =================== END PORTAL ==============================
+  portal_end:
+    material: ENDER_EYE
+    slot: 24
+    display_name: '&#FF5700&lПортал в Энд'
+    lore:
+      - '&r'
+      - '&r &#FF5700┃ &r&#aaaaaaОтправиться в &5Край.'
+      - '&r &#FF5700┃ &r&#aaaaaaЗдесь обитает Дракон Края'
+      - '&r &#FF5700┃ &r&#aaaaaaи встречаются города Энда.'
+      - '&r'
+      - '&r &#FF5700▶ &r&fМир: &5&lend'
+      - '&r'
+      - '&aНажмите, чтобы &5переместиться'
+    enchantments:
+      - DURABILITY;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_ENDERMAN_TELEPORT'
+      - '[player] warp enderportal'
+    right_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_ENDERMAN_TELEPORT'
+      - '[player] warp enderportal'
+
+  # =================== BACK BUTTON =============================
+  back:
+    material: SPECTRAL_ARROW
+    slot: 40
+    display_name: '&#FF5700&lВернуться обратно'
+    lore:
+      - '&r'
+      - '&r &#FF5700┃ &r&#aaaaaaЗакрыть это меню.'
+      - '&r'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[player] menu'
+    right_click_commands:
+      - '[player] menu'
+

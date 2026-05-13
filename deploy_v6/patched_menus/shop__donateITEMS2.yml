@@ -1,0 +1,501 @@
+menu_title: "ௗ"
+open_command: armor
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 54
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 25
+      - 26
+      - 27
+      - 28
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      - 53
+  'farm':
+    material: netherite_sword
+    slot: 20
+    display_name: '&7« &x&F&B&5&4&0&DВыгодный Фарм &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    lore:
+      - ''
+      - '&7Добыча V'
+      - '&7Прочность III'
+      - '&7Разящий клинок III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8750 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '750'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '750'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 750'
+      - '[console] sitems give %player_name% ВыгодныйФарм'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 750'
+      - '[console] sitems give %player_name% ВыгодныйФарм'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'drovosek':
+    material: netherite_axe
+    slot: 24
+    display_name: '&7« &x&F&B&5&4&0&DДровосек &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    lore:
+      - ''
+      - '&7Эффективность V'
+      - '&7Прочность III'
+      - '&7Починка'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8350 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] sitems give %player_name% ТопорДровосека'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] sitems give %player_name% ТопорДровосека'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'shaxter':
+    material: netherite_pickaxe
+    slot: 23
+    display_name: '&7« &x&F&B&5&4&0&DШахтер &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    lore:
+      - ''
+      - '&7Эффективность V'
+      - '&7Прочность III'
+      - '&7Починка'
+      - ''
+      - '&7Бур: &a3x3'
+      - '&7Нажмите &eShift + ПКМ &7чтобы вкл/выкл бур'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% КиркаШахтера'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% КиркаШахтера'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'vosxod_sword':
+    material: netherite_sword
+    slot: 21
+    display_name: '&7« &x&F&B&5&4&0&DМеч Барона &7»'
+    enchantments:
+      - DURABILITY;3
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    lore:
+      - ''
+      - '&7Острота V'
+      - '&7Заговор огня II'
+      - '&7Разящий клинок III'
+      - '&7Прочность III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8650 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '650'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '650'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 650'
+      - '[console] sitems give %player_name% МечБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 650'
+      - '[console] sitems give %player_name% МечБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'stabil':
+    material: elytra
+    slot: 22
+    display_name: '&7« &x&F&B&5&4&0&DВезучие Крылья &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    lore:
+      - ''
+      - '&7Прочность V'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ВезучиеКрилья'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ВезучиеКрилья'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'trap':
+    material: HONEYCOMB
+    slot: 31
+    display_name: '&6[♬] Клетка'
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    lore:
+      - ''
+      - '&7При клике &fПКМ'
+      - '&7создает клетку вокруг &f3x3'
+      - '&7Нельзя сломать &f15 секунд'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8950 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '950'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '950'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 950'
+      - '[console] strap give trap %player_name% 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 950'
+      - '[console] strap give trap %player_name% 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'vosxod_helmet':
+    material: netherite_helmet
+    slot: 29
+    display_name: '&7« &x&F&B&5&4&0&DШлем Барона &7»'
+    enchantments:
+      - DURABILITY;3
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    lore:
+      - ''
+      - '&7Подводник'
+      - '&7Починка'
+      - '&7Защита IV'
+      - '&7Подводное дыхание III'
+      - '&7Прочность III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ШлемБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ШлемБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'vosxod_chestplate':
+    material: netherite_chestplate
+    slot: 30
+    display_name: '&7« &x&F&B&5&4&0&DНагрудник Барона &7»'
+    enchantments:
+      - DURABILITY;3
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    lore:
+      - ''
+      - '&7Починка'
+      - '&7Защита IV'
+      - '&7Прочность III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% НагрудникБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% НагрудникБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'vosxod_leggings':
+    material: netherite_leggings
+    slot: 32
+    display_name: '&7« &x&F&B&5&4&0&DПоножи Барона &7»'
+    enchantments:
+      - DURABILITY;3
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    lore:
+      - ''
+      - '&7Починка'
+      - '&7Защита IV'
+      - '&7Прочность III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ПоножиБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% ПоножиБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'vosxod_boots':
+    material: netherite_boots
+    slot: 33
+    display_name: '&7« &x&F&B&5&4&0&DБотинки Барона &7»'
+    enchantments:
+      - DURABILITY;3
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    lore:
+      - ''
+      - '&7Подводная ходьба III'
+      - '&7Невесомость IV'
+      - '&7Починка'
+      - '&7Защита IV'
+      - '&7Прочность III'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% БотинкиБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] sitems give %player_name% БотинкиБарона'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 49
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+

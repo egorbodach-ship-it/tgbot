@@ -1,0 +1,226 @@
+menu_title: "௙"
+open_command:
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 55
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      - 53
+      - 54
+  'ЗельеКопателя':
+    display_name: '&#06A100&lЗ&#08AD02&lе&#0AB904&lл&#0DC506&lь&#0FD007&lе &#13E80B&lК&#11DE09&lо&#0FD408&lп&#0DCA06&lа&#0CBF05&lт&#0AB503&lе&#08AB02&lл&#06A100&lя'
+    lore:
+      - '&r'
+      - ' &#06A100&l▎ &9Спешка III (1:00)'
+      - ' &#06A100&l▎ &9Скорость II (4:00)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8200 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: potion
+    amount: 3
+    nbt_int: CustomPotionColor:6487892
+    potionType:
+      - "SPEED"
+    slot: 22
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 200
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 200'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] sitems give %player_name% kopatel'
+      - '[refresh]'
+
+  'ЗельеМедика':
+    display_name: '&#A500FF&lЗ&#AB12FF&lе&#B124FF&lл&#B835FF&lь&#BE47FF&lе &#BF4AFF&lМ&#BA3BFF&lе&#B52DFF&lд&#AF1EFF&lи&#AA0FFF&lк&#A500FF&lа'
+    lore:
+      - '&r'
+      - ' &#A500FF&l▎ &9Регенерация II (0:30)'
+      - ' &#A500FF&l▎ &9Прилив здоровья (0:45)'
+      - ' &#A500FF&l▎ &9Сопротивление II (0:10)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8250 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: potion
+    amount: 3
+    nbt_int: CustomPotionColor:15619327
+    potionType:
+      - "SPEED"
+    slot: 21
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 250
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cностаточно %fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 250'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] sitems give %player_name% medik'
+      - '[refresh]'
+
+  'ЗельеЗлодея':
+    display_name: '&#90CD00&lЗ&#98D702&lе&#9FE104&lл&#A7EB06&lь&#AEF508&lе &#B0F708&lЗ&#A9EE07&lл&#A3E605&lо&#9DDE03&lд&#96D502&lе&#90CD00&lя'
+    lore:
+      - '&r'
+      - ' &#90CD00&l▎ &9Невидимость (1:20)'
+      - ' &#90CD00&l▎ &9Скорость V (1:30)'
+      - ' &#90CD00&l▎ &9Ночное зрение (1:20)'
+      - ' &#90CD00&l▎ &9Грация дельфина III (1:30)'
+      - ' &#90CD00&l▎ &cЛевитация V (0:15)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8350 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: potion
+    amount: 3
+    nbt_int: CustomPotionColor:12962125
+    potionType:
+      - "SPEED"
+    slot: 23
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 350
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 350'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] sitems give %player_name% zlodei'
+      - '[refresh]'
+
+  'ЗельеПроклятья':
+    display_name: '&#4B0082&lЗелье Проклятья'
+    lore:
+      - '&r'
+      - ' &#4B0082&l▎ &cКидаемое дебафф-зелье'
+      - ''
+      - ' &#4B0082&l▎ &9Слепота (0:20)'
+      - ' &#4B0082&l▎ &9Слабость II (0:40)'
+      - ' &#4B0082&l▎ &9Утомление III (0:30)'
+      - ' &#4B0082&l▎ &9Замедление III (0:30)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8400 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: splash_potion
+    amount: 3
+    nbt_int: CustomPotionColor:4915330
+    potionType:
+      - "WEAKNESS"
+    slot: 31
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 400
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 400'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] sitems give %player_name% ЗельеПроклятья'
+      - '[refresh]'
+
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 49
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+

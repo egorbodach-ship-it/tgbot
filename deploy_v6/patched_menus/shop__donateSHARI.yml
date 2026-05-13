@@ -1,0 +1,307 @@
+menu_title: "௠"
+open_command: runes
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 54
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      - 53
+  'runes1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFjODc0NTRmMWVlNTg1YjkwZmRiM2EzZTQwOTUyYTVjMmY4MGMwYTQ5ZGZlYzYyODcwZmRmZjE4Mzk2N2E4NCJ9fX0=
+    slot: 20
+    display_name: '&7« &x&F&C&C&4&0&5Шар Солнца &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&F&D&C&F&0&4&n▌&f &fУрон &x&F&D&C&F&0&4+2'
+      - '&x&F&D&C&F&0&4&n▌&f &fСкорость атаки &x&F&D&C&F&0&4+10%'
+      - '&x&F&D&C&F&0&4&n▌&f &fСкорость &x&F&D&C&F&0&4+10%'
+      - ''
+      - '&x&F&D&C&F&0&4&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8500 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] customitems give %player_name% sun'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] customitems give %player_name% sun'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'runes2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzViNDI5OGZiZjVlZTE3MjMzMmUwM2Y4YTBlMWE0YjQ0YmY2MzUzY2FiMjc0NTVjNzMyODFhMTE5ODRhOWI5MSJ9fX0=
+    slot: 21
+    display_name: '&7« &x&0&8&C&0&F&BШар Нептуна &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&0&8&C&0&F&B&n▌&f &fМакс. здоровье &x&0&8&C&0&F&B+2'
+      - '&x&0&8&C&0&F&B&n▌&f &fБроня &x&0&8&C&0&F&B+2'
+      - '&x&0&8&C&0&F&B&n▌&f &fУрон &x&0&8&C&0&F&B+1'
+      - ''
+      - '&x&0&8&C&0&F&B&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8425 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '425'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '425'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 425'
+      - '[console] customitems give %player_name% neptuna'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 425'
+      - '[console] customitems give %player_name% neptuna'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'runes3':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg1YTIwNjY5N2QzNTcwOWNlMjcxZjM4NTM5MzNkOGE0YjRlZjEwNTYyOWQyZDc0ZTRhZDkzY2U3MGIxZmMwYyJ9fX0=
+    slot: 22
+    display_name: '&7« &x&F&F&F&F&F&FШар Ангела &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&D&3&D&3&D&3&n▌&f &fСкорость &x&D&3&D&3&D&3+20%'
+      - '&x&D&3&D&3&D&3&n▌&f &fМакс. здоровье &x&D&3&D&3&D&3+1'
+      - '&x&D&3&D&3&D&3&n▌&f &fБроня &x&D&3&D&3&D&3+1'
+      - ''
+      - '&x&D&3&D&3&D&3&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8350 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] customitems give %player_name% angel'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] customitems give %player_name% angel'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'runes4':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTIzNTA4ZmQyMzIyODVkNjY4ZWQ2YTAyNjQxMDE3MjYyNjdkMzI5MWI3ZGFlOTc2YmVhZjcyZDQ0MTNiZWVmYyJ9fX0=
+    slot: 23
+    display_name: '&7« &x&B&1&4&0&D&7Шар Чародея &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&B&1&4&0&D&7&n▌&f &fСкорость атаки &x&B&1&4&0&D&7+15%'
+      - '&x&B&1&4&0&D&7&n▌&f &fУрон &x&B&1&4&0&D&7+1'
+      - '&x&B&1&4&0&D&7&n▌&f &fСкорость &x&B&1&4&0&D&7+10%'
+      - ''
+      - '&x&B&1&4&0&D&7&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8275 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '275'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '275'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 275'
+      - '[console] customitems give %player_name% char'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 275'
+      - '[console] customitems give %player_name% char'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'runes5':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTY5MmU1NzFlOWY5ODNkMWIxMGRiMzcyZTE4YTc5NTMxNGJlNmIwNTJiMDJhOGE1NmNjOTg1OWExZGQ4MjU4NyJ9fX0=
+    slot: 24
+    display_name: '&7« &x&5&8&F&F&0&3Шар Хамелеона &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&5&8&F&F&0&3&n▌&f &fУрон &x&5&8&F&F&0&3+1'
+      - '&x&5&8&F&F&0&3&n▌&f &fСкорость атаки &x&5&8&F&F&0&3+5%'
+      - '&x&5&8&F&F&0&3&n▌&f &fМакс. здоровье &x&5&8&F&F&0&3+1'
+      - '&x&5&8&F&F&0&3&n▌&f &fБроня &x&5&8&F&F&0&3+1'
+      - ''
+      - '&x&5&8&F&F&0&3&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8350 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '350'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] customitems give %player_name% xameleon'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 350'
+      - '[console] customitems give %player_name% xameleon'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'dark':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTUzMzI0M2E0MTk2NDY1MGQ5NmZiYTJjMTE5MWU3MzRmZDI4ZTNhYWZlODA2YzM1YTk5YWViOWZiOGQzZjMyNyJ9fX0=
+    slot: 31
+    display_name: '&7« &x&F&F&1&8&1&8Шар Вампира &7»'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - ''
+      - '&x&F&F&1&8&1&8&n▌&f &fУрон &x&F&F&1&8&1&8+5'
+      - '&x&F&F&1&8&1&8&n▌&f &fСкорость атаки &x&F&F&1&8&1&8+25%'
+      - '&x&F&F&1&8&1&8&n▌&f &fСкорость &x&F&F&1&8&1&8+20%'
+      - '&x&F&F&1&8&1&8&n▌&f &fМакс. здоровье &x&F&F&1&8&1&8+2'
+      - '&x&F&F&1&8&1&8&n▌&f &fБроня &x&F&F&1&8&1&8+2'
+      - '&x&F&F&1&8&1&8&n▌&f &fУст. к отбрасыванию &x&F&F&1&8&1&8+30%'
+      - ''
+      - '&x&F&F&1&8&1&8&n▌&f &7Работает только во второй руке'
+      - ''
+      - '&x&F&B&5&4&0&D&l▶ &fДонатный шар — &cпокупка только на сайте'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &x&F&B&5&4&0&Dузнать &fподробнее'
+    left_click_commands:
+      - '[message] &x&F&B&5&4&0&D&l▶ &fШар можно &x&F&B&5&4&0&Dприобрести &fна сайте &x&F&B&5&4&0&Dꜱᴏʟᴏᴍᴏɴɢɪʀᴇꜰ.ꜱʜᴏᴘ'
+    right_click_commands:
+      - '[message] &x&F&B&5&4&0&D&l▶ &fШар можно &x&F&B&5&4&0&Dприобрести &fна сайте &x&F&B&5&4&0&Dᴡᴡᴡ.ꜱᴏʟᴏᴍᴏɴɢʀɪᴇꜰ.ꜱʜᴏᴘ'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 49
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+
