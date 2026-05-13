@@ -1,0 +1,98 @@
+menu_title: "௔"
+open_commands:
+  - '[console] execute at %player_name% run playsound minecraft:block.barrel.open master %player_name% ~ ~ ~ 1 1'
+  - '[console] execute at %player_name% run playsound minecraft:entity.player.levelup master %player_name% ~ ~ ~ 0.4 1.5<delay=2>'
+size: 45
+update_interval: 6
+
+items:
+
+  # === ВНЕШНЯЯ ОРАНЖЕВАЯ РАМКА ===
+  frame_orange:
+    material: orange_stained_glass_pane
+    display_name: '&r&r'
+    slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+
+  # === ВНУТРЕННИЙ ЧЁРНЫЙ ФОН ===
+  inner_fill:
+    material: black_stained_glass_pane
+    display_name: '&r&r'
+    slots: [10, 11, 12, 14, 15, 16, 19, 20, 24, 25, 28, 29, 30, 32, 33, 34]
+
+  # === МИГАЮЩИЕ ЛУЧИ ВОКРУГ ГОЛОВЫ (ФАЗА A) ===
+  ray_a:
+    material: orange_stained_glass_pane
+    display_name: '&r&r'
+    slots: [13, 21, 23, 31]
+    priority: 1
+    view_requirement:
+      requirements:
+        tick_a:
+          type: '<='
+          input: '%server_time_seconds% % 2'
+          output: '0'
+
+  # === МИГАЮЩИЕ ЛУЧИ ВОКРУГ ГОЛОВЫ (ФАЗА B) ===
+  ray_b:
+    material: yellow_stained_glass_pane
+    display_name: '&r&r'
+    slots: [13, 21, 23, 31]
+    priority: 2
+    view_requirement:
+      requirements:
+        tick_b:
+          type: '>='
+          input: '%server_time_seconds% % 2'
+          output: '1'
+
+  # === ГЛАВНЫЙ ПРИЗ: ГОЛОВА HURTDOWN (НЕ ПОЛУЧЕН) ===
+  gift_yes:
+    slot: 22
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODZkNTViZmU2MjA0NjQyMjViNWZkMzg5ZGY0ZDMxNTI3MWE4MzVlOTg3M2NlNTQ1ODI2M2RkMDhjYjIzZDI1MiJ9fX0=
+    display_name: '&#FF5700П&#FB5500о&#F75300д&#F35100а&#EF5000р&#EB4E00о&#E74D00к &#E34B00о&#DF4900т &#DB4700A&#D74600k&#D34400r&#CF4200i&#CB4000w&#C73E00e&#C33D00r'
+    lore:
+      - ''
+      - '&#FF5700┃ &fПривет, друг!'
+      - '&#FF5700┃ &fЯ - &6Akriwer&f, и я приготовил'
+      - '&#FF5700┃ &fдля тебя небольшой подарок:'
+      - ''
+      - '&#FF5700┃ &7► &#FFD500300 &fдонат-валюты'
+      - ''
+      - '&a▶ Нажмите чтобы получить'
+    glow: true
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_akriwer.received%'
+          output: 'no'
+    left_click_commands:
+      - '[console] lp user %player_name% permission set akriwer.received true'
+      - '[console] p give %player_name% 300'
+      - '[message] '
+      - '[message] &#FF5700▶ &fВы получили &6300 &fдонат-валюты от &6Akriwer&f!'
+      - '[message] &7└ &oСпасибо за поддержку нашего сервера!'
+      - '[message] '
+      - '[console] execute at %player_name% run playsound minecraft:entity.player.levelup master %player_name% ~ ~ ~ 1 1'
+      - '[console] execute at %player_name% run playsound minecraft:ui.toast.challenge_complete master %player_name% ~ ~ ~ 1 1.2'
+      - '[close]'
+
+  # === ГЛАВНЫЙ ПРИЗ: ГОЛОВА HURTDOWN (УЖЕ ПОЛУЧЕН) ===
+  gift_no:
+    slot: 22
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODZkNTViZmU2MjA0NjQyMjViNWZkMzg5ZGY0ZDMxNTI3MWE4MzVlOTg3M2NlNTQ1ODI2M2RkMDhjYjIzZDI1MiJ9fX0=
+    display_name: '&8&mПодарок от Akriwer'
+    lore:
+      - ''
+      - '&7┃ &fВы уже получили подарок'
+      - '&7┃ &fот &6Akriwer&f.'
+      - ''
+      - '&c▶ Уже забрано'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_akriwer.received%'
+          output: 'yes'

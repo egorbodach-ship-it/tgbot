@@ -1,0 +1,453 @@
+menu_title: "௖"
+open_command:
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 54
+items:
+  'villager':
+    material: 'villager_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 12
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва жителя'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&81000 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 1000'
+      - '[console] give %player_name% villager_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 1000
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'husk':
+    material: 'husk_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 13
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва кадавра'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8330 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 330'
+      - '[console] give %player_name% husk_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 330
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'pig':
+    material: 'pig_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 14
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва свиньи'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&899 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 99'
+      - '[console] give %player_name% pig_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 99
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'blaze':
+    material: 'blaze_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 20
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва ифрита'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8459 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 459'
+      - '[console] give %player_name% blaze_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 459
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'creeper':
+    material: 'creeper_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 21
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва крипера'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8700 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 700'
+      - '[console] give %player_name% creeper_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 700
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'wither_skeleton':
+    material: 'wither_skeleton_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 22
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва визер-скелета'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8450 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 450'
+      - '[console] give %player_name% wither_skeleton_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 450
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'magma':
+    material: 'magma_cube_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 23
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва магмового куба'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8800 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 800'
+      - '[console] give %player_name% magma_cube_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 800
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'skeleton':
+    material: 'skeleton_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 24
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва скелета'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8349 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 349'
+      - '[console] give %player_name% skeleton_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 349
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'zombie':
+    material: 'zombie_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 29
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва зомби'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8300 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 300'
+      - '[console] give %player_name% zombie_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 300
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'llama':
+    material: 'llama_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 30
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва ламы'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8100 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 100'
+      - '[console] give %player_name% llama_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 100
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'cow':
+    material: 'cow_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 31
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва коровы'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&885 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 85'
+      - '[console] give %player_name% cow_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 85
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'witch':
+    material: 'witch_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 32
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва ведьмы'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8559 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 559'
+      - '[console] give %player_name% witch_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 559
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'sheep':
+    material: 'sheep_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 33
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва овцы'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&875 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 75'
+      - '[console] give %player_name% sheep_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 75
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'spider':
+    material: 'spider_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 39
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва паука'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8155 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 155'
+      - '[console] give %player_name% spider_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 155
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'poborn':
+    material: 'vindicator_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 40
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва поборника'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8650 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 650'
+      - '[console] give %player_name% vindicator_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 650
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'enderman':
+    material: 'enderman_spawn_egg'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slot: 41
+    display_name: '&x&F&F&5&7&0&0Яйцо призыва эндермена'
+    lore:
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8800 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_commands:
+      - '[console] points take %player_name% 800'
+      - '[console] give %player_name% enderman_spawn_egg 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    left_click_requirement:
+      requirements:
+        money_requirement:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 800
+      deny_commands:
+        - '[close]'
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 49
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    click_commands:
+      - '[openguimenu] donateSPAWNERS'
+
+  'white':
+    material: orange_stained_glass_pane
+    display_name: ''
+    slots:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 18
+      - 27
+      - 47
+      - 48
+      - 50
+      - 51
+      - 17
+      - 26
+      - 35
+      - 44
+
+  'black':
+    material: black_stained_glass_pane
+    display_name: ''
+    slots:
+      - 0
+      - 1
+      - 9
+      - 36
+      - 45
+      - 46
+      - 53
+      - 52
+      - 44
+      - 7
+      - 8
+      - 17

@@ -1,0 +1,107 @@
+menu_title: "௎"
+open_command: arenda
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 44
+items:
+  'orange_glass':
+    display_name: '&r&r'
+    material: orange_stained_glass_pane
+    slots:
+    - 0
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+  'black_glass':
+    display_name: '&r&r'
+    material: black_stained_glass_pane
+    slots:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 10
+    - 16
+    - 19
+    - 25
+    - 28
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+  'gray_glass':
+    display_name: '&r&r'
+    material: gray_stained_glass_pane
+    slots:
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 20
+    - 22
+    - 24
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+  'bick_dick_akyma_90':
+    display_name: '&#2B93FC&lᴘ&#2B93FC&lʜ&#2B93FC&lᴏ&#3C9BFA&lɴ&#4DA2F9&lɪ&#5EAAF7&lx &f%player_name% &7&l∫ &#FF5700500.000 &fмонет / &#FF5700&n3 дня'
+    slot: 21
+    material: blue_bed
+    lore:
+    - '&r'
+    - '&#FF5700┃ &fУзнать возможности: &#FF5700ПКМ&r'
+    - '&#FF5700┃ &fВаш баланс: &#FF5700%vault_eco_balance% $'
+    - '&r'
+    - '&aНажмите, чтобы приобрести (ЛКМ)&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 500000
+          deny_commands:
+          - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 500000'
+    - '[console] lp user %player_name% parent addtemp phonix 3d'
+    right_click_commands:
+      - '[openguimenu] donate'
+
+  'bick_dick_akyma_30':
+    display_name: '&#00B09B&lɴ&#1EB588&lᴇ&#3CBA75&lʙ&#5ABF63&lᴜ&#78C450&lʟ&#96C93D&lᴀ &f%player_name% &7&l∫ &#FF57001.000.000 &f/ &#FF5700&n1 ден'
+    slot: 23
+    material: green_bed
+    lore:
+    - '&r'
+    - '&#FF5700┃ &fУзнать возможности: &#FF5700ПКМ&r'
+    - '&#FF5700┃ &fВаш баланс: &#FF5700%vault_eco_balance% $'
+    - '&r'
+    - '&aНажмите, чтобы приобрести (ЛКМ)&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 1000000
+      deny_commands:
+      - '[message] &7&l[&#FF5700&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+    - '[console] eco take %player_name% 1000000'
+    - '[console] lp user %player_name% parent addtemp nebula 1d'
+    right_click_commands:
+      - '[openguimenu] donate'

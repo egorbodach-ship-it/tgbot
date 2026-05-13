@@ -1,0 +1,189 @@
+menu_title: '&8&l> &0Меню титулов'
+size: 44
+open_command:
+- titles
+- tags
+- title
+register_command: true
+open_commands:
+- '[sound] BLOCK_BARREL_OPEN'
+items:
+  'memes_no':
+    material: barrier
+    display_name: '&#FF5700Мемные титулы'
+    slot: 20
+    priority: 2
+    lore:
+    - ''
+    - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&83500€'
+    - ''
+    - '&fНажмите, чтобы &aкупить &fпак титулов'
+    left_click_requirement:
+     requirements:
+      playerpoints:
+       type: '>='
+       input: '%playerpoints_points%'
+       output: 3500
+       deny_commands:
+       - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fевро'
+       - '[sound] ENTITY_VILLAGER_NO' 
+       - '[close]'
+    left_click_commands:
+    - '[console] lp user %player_name% permission set showed.memestitles'
+    - '[console] p take %player_name% 3500'
+    - '[refresh]'
+    - '[sound] ENTITY_VILLAGER_YES'   
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fприобрели пак титулов'
+  'memes_yes':
+    material: map
+    display_name: '&#FF5700Мемные титулы'
+    slot: 20
+    priority: 1
+    lore:
+    - ''
+    - '&#FF5700┃ &fХочешь себе &#FF5700изменить &fтитул?'
+    - '&#FF5700┃ &fТогда &#FF5700нажимай &fи выбирай'
+    - ''
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    view_requirement:
+     requirements:
+      permission:
+       type: has permission
+       permission: showed.memestitles
+    left_click_commands:
+    - '[player] titlesmemes'
+  'anime_no':
+    material: barrier
+    display_name: '&#FF5700Аниме титулы'
+    slot: 22
+    priority: 2
+    lore:
+    - ''
+    - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&83500€'
+    - ''
+    - '&fНажмите, чтобы &aкупить &fпак титулов'
+    left_click_requirement:
+     requirements:
+      playerpoints:
+       type: '>='
+       input: '%playerpoints_points%'
+       output: 3500
+       deny_commands:
+       - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fевро'
+       - '[sound] ENTITY_VILLAGER_NO' 
+       - '[close]'
+    left_click_commands:
+    - '[console] lp user %player_name% permission set showed.animetitles'
+    - '[console] p take %player_name% 3500'
+    - '[refresh]'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fприобрели пак титулов'
+  'anime_yes':
+    material: map
+    display_name: '&#FF5700Аниме титулы'
+    slot: 22
+    priority: 1
+    lore:
+    - ''
+    - '&#FF5700┃ &fХочешь себе &#FF5700изменить &fтитул?'
+    - '&#FF5700┃ &fТогда &#FF5700нажимай &fи выбирай'
+    - ''
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    view_requirement:
+     requirements:
+      permission:
+       type: has permission
+       permission: showed.animetitles
+    left_click_commands:
+    - '[player] titlesanime'
+  'exclusive_no':
+    material: barrier
+    display_name: '&#FF5700Экслюзивные титулы'
+    slot: 24
+    priority: 2
+    lore:
+    - ''
+    - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&83500€'
+    - ''
+    - '&fНажмите, чтобы &aкупить &fпак титулов'
+    left_click_requirement:
+     requirements:
+      playerpoints:
+       type: '>='
+       input: '%playerpoints_points%'
+       output: 3500
+       deny_commands:
+       - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fевро'
+       - '[sound] ENTITY_VILLAGER_NO' 
+       - '[close]'
+    left_click_commands:
+    - '[console] lp user %player_name% permission set showed.exclusivetitles'
+    - '[console] p take %player_name% 3500'
+    - '[refresh]'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fприобрели пак титулов'
+  'exclusive_yes':
+    material: map
+    display_name: '&#FF5700Экслюзивные титулы'
+    slot: 24
+    priority: 1
+    lore:
+    - ''
+    - '&#FF5700┃ &fХочешь себе &#FF5700изменить &fтитул?'
+    - '&#FF5700┃ &fТогда &#FF5700нажимай &fи выбирай'
+    - ''
+    - '&r&#55ff55Нажмите, чтобы открыть&r'
+    view_requirement:
+     requirements:
+      permission:
+       type: has permission
+       permission: showed.exclusivetitles
+    left_click_commands:
+    - '[player] titlesexclusive'
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+    - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+    - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+  'white':
+    material: orange_stained_glass_pane
+    display_name: ''
+    slots:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 18
+    - 17
+    - 26
+    - 35
+    - 37
+    - 38
+    - 39
+    - 41
+    - 42
+    - 44
+  'black':
+    material: black_stained_glass_pane
+    display_name: ''
+    slots:
+    - 0
+    - 1
+    - 9
+    - 36
+    - 44
+    - 7
+    - 8
+    - 17
+    - 27
+    - 37
+    - 43
+    - 35

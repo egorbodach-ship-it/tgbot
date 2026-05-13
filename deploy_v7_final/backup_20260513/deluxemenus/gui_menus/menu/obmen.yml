@@ -1,0 +1,134 @@
+menu_title: "்"
+open_command:
+  - obmen
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 27
+
+items:
+  '15k':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н &#EA5000#&#E74F001'
+    slot: 11
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzVjOWNjY2Y2MWE2ZTYyODRmZTliYmU2NDkxNTViZTRkOWNhOTZmNzhmZmNiMjc5Yjg0ZTE2MTc4ZGFjYjUyMiJ9fX0=
+    lore:
+      - '&r'
+      - '&#FF5700┃ &r&7Обмен: &#FF570015.000 $ - 5 ₪'
+      - '&r'
+      - '&r&#FF5700⌚ &r&#aaaaaaНажмите, чтобы обменять!&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 15000
+      deny_commands:
+        - '[message] &7&l[&#2B93FC&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+      - '[console] eco take %player_name% 15000'
+      - '[console] p give %player_name% 5'
+
+  '45k':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н &#EA5000#&#E74F002'
+    slot: 12
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzVjOWNjY2Y2MWE2ZTYyODRmZTliYmU2NDkxNTViZTRkOWNhOTZmNzhmZmNiMjc5Yjg0ZTE2MTc4ZGFjYjUyMiJ9fX0=
+    lore:
+      - '&r'
+      - '&#FF5700┃ &r&7Обмен: &#FF570045.000 $ - 15 ₪'
+      - '&r'
+      - '&r&#FF5700⌚ &r&#aaaaaaНажмите, чтобы обменять!&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 45000
+      deny_commands:
+        - '[message] &7&l[&#2B93FC&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+      - '[console] eco take %player_name% 45000'
+      - '[console] p give %player_name% 15'
+
+  '135k':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н &#EA5000#&#E74F003'
+    slot: 13
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzVjOWNjY2Y2MWE2ZTYyODRmZTliYmU2NDkxNTViZTRkOWNhOTZmNzhmZmNiMjc5Yjg0ZTE2MTc4ZGFjYjUyMiJ9fX0=
+    lore:
+      - '&r'
+      - '&#FF5700┃ &r&7Обмен: &#FF5700135.000 $ - 45 ₪'
+      - '&r'
+      - '&r&#FF5700⌚ &r&#aaaaaaНажмите, чтобы обменять!&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 135000
+      deny_commands:
+        - '[message] &7&l[&#2B93FC&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+      - '[console] eco take %player_name% 135000'
+      - '[console] p give %player_name% 45'
+
+  '405k':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н &#EA5000#&#E74F004'
+    slot: 14
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzVjOWNjY2Y2MWE2ZTYyODRmZTliYmU2NDkxNTViZTRkOWNhOTZmNzhmZmNiMjc5Yjg0ZTE2MTc4ZGFjYjUyMiJ9fX0=
+    lore:
+      - '&r'
+      - '&#FF5700┃ &r&7Обмен: &#FF5700405.000 $ - 135 ₪'
+      - '&r'
+      - '&r&#FF5700⌚ &r&#aaaaaaНажмите, чтобы обменять!&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 405000
+      deny_commands:
+        - '[message] &7&l[&#2B93FC&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+      - '[console] eco take %player_name% 405000'
+      - '[console] p give %player_name% 135'
+
+  '2430k':
+    display_name: '&#FF5700О&#FC5600б&#F85500м&#F55400е&#F15200н &#EA5000#&#E74F005'
+    slot: 15
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzVjOWNjY2Y2MWE2ZTYyODRmZTliYmU2NDkxNTViZTRkOWNhOTZmNzhmZmNiMjc5Yjg0ZTE2MTc4ZGFjYjUyMiJ9fX0=
+    lore:
+      - '&r'
+      - '&#FF5700┃ &r&7Обмен: &#FF57003.000.000 $ - 850 ₪'
+      - '&r'
+      - '&r&#FF5700⌚ &r&#aaaaaaНажмите, чтобы обменять!&r'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 3000000
+      deny_commands:
+        - '[message] &7&l[&#2B93FC&l$&7&l] &8> &7У вас недостаточно средств.'
+    left_click_commands:
+      - '[console] eco take %player_name% 3000000'
+      - '[console] p give %player_name% 850'
+
+  'стекло1':
+    display_name: ' '
+    material: orange_stained_glass_pane
+    slots:
+      - 0
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+
+  'кор-стекло1':
+    display_name: ' '
+    material: black_stained_glass_pane
+    slots:
+      - 1
+      - 2
+      - 6
+      - 7
+      - 10
+      - 16
+      - 19
+      - 20
+      - 24
+      - 25

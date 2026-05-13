@@ -1,0 +1,105 @@
+menu_title: "&f௪ோ"
+open_command:
+- menu
+- menus
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 54
+items:
+  '13':
+    display_name: '&#FF5700Ивенты сервера'
+    slot: 13
+    material: BEACON
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaЗдесь собраны все уникальные'
+    - '&#FF5700┃ &r&#aaaaaaсобытия и ивенты нашего сервера!'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы открыть меню'
+    left_click_commands:
+      - '[player] event'
+    right_click_commands:
+      - '[player] event'
+  '20':
+    display_name: '&#FF5700Скупщик'
+    slot: 20
+    material: hopper_minecart
+    lore:
+    - '&r'
+    - '&#FF5700┃ &r&#aaaaaaУ нас имеется уникальный скупщик!'
+    - '&r'
+    - '&r&#55ff55Нажмите, чтобы телепортироваться'
+    left_click_commands:
+      - '[player] seller'
+    right_click_commands:
+      - '[player] seller'
+  '22':
+    display_name: '&#FF5700Пвп-Арена'
+    slot: 22
+    material: diamond_sword
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    enchantments:
+    - KNOCKBACK;1
+    left_click_commands:
+      - '[player] warp pvp'
+    right_click_commands:
+      - '[player] warp pvp'
+  '24':
+    display_name: '&#FF5700Обменник'
+    slot: 24
+    material: gold_nugget
+    left_click_commands:
+      - '[player] obmen'
+    right_click_commands:
+      - '[player] obmen'
+  '29':
+    display_name: '&#FF5700Порталы'
+    slot: 29
+    material: end_portal_frame
+    left_click_commands:
+      - '[player] portals'
+    right_click_commands:
+      - '[player] portals'
+  '31':
+    display_name: '&#FF5700АФК-Заработок'
+    slot: 31
+    material: campfire
+    left_click_commands:
+      - '[player] warp afk'
+    right_click_commands:
+      - '[player] warp afk'
+  '33':
+    display_name: '&#FF5700Кейсики'
+    slot: 33
+    material: ender_chest
+    left_click_commands:
+      - '[player] warp case'
+    right_click_commands:
+      - '[player] warp case'
+  '48':
+    display_name: '&#FF5700Награды за время'
+    slot: 48
+    material: chest_minecart
+    left_click_commands:
+      - '[player] free'
+    right_click_commands:
+      - '[player] free'
+  '49':
+    display_name: '&#FF5700Донат меню'
+    slot: 49
+    material: fire_charge
+    left_click_commands:
+      - '[player] donate'
+    right_click_commands:
+      - '[player] donate'
+  '50':
+    display_name: '&#FF5700Магазины'
+    slot: 50
+    material: pufferfish
+    left_click_commands:
+      - '[player] shop'
+    right_click_commands:
+      - '[player] shop'

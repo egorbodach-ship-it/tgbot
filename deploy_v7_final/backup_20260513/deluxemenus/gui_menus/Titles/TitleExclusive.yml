@@ -1,0 +1,299 @@
+menu_title: '&8&l> &0Экслюзивные титулы'
+size: 44
+open_command: titlesexclusive
+register_command: false
+open_requirement:
+ requirements:
+  permission:
+   type: has permission
+   permission: showed.exclusivetitles
+   deny_commands:
+   - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fправ'
+   - '[sound] ENTITY_VILLAGER_NO'
+open_commands:
+- '[sound] BLOCK_BARREL_OPEN'
+items:
+  'clear':
+    material: barrier
+    display_name: '&x&F&F&0&0&0&0Очистить титул'
+    slot: 4
+    lore:
+    - '&7Не нравится ваш нынешний'
+    - '&7титул тогда очистите его'
+    left_click_commands:
+    - '[console] lp user %player_name% meta removesuffix 100'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fочистили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'golda_na_balike':
+    material: paper
+    display_name: '&x&D&D&F&F&0&0Г&x&D&E&F&F&0&9о&x&D&F&F&F&1&2л&x&E&1&F&F&1&Bд&x&E&2&F&F&2&3а &x&E&4&F&F&3&5н&x&E&6&F&F&3&Eа &x&E&8&F&F&5&0б&x&E&9&F&F&5&9а&x&E&A&F&F&6&1л&x&E&C&F&F&6&Aи&x&E&D&F&F&7&3к&x&E&E&F&F&7&Cе'
+    slot: 11
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&D&D&F&F&0&0Г&x&D&E&F&F&0&9о&x&D&F&F&F&1&2л&x&E&1&F&F&1&Bд&x&E&2&F&F&2&3а &x&E&4&F&F&3&5н&x&E&6&F&F&3&Eа &x&E&8&F&F&5&0б&x&E&9&F&F&5&9а&x&E&A&F&F&6&1л&x&E&C&F&F&6&Aи&x&E&D&F&F&7&3к&x&E&E&F&F&7&Cе"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'major':
+    material: paper
+    display_name: '&x&7&5&F&F&0&0М&x&9&3&F&F&1&Fа&x&B&2&F&F&3&Eж&x&D&0&F&F&5&Dо&x&E&E&F&F&7&Cр'
+    slot: 12
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&7&5&F&F&0&0М&x&9&3&F&F&1&Fа&x&B&2&F&F&3&Eж&x&D&0&F&F&5&Dо&x&E&E&F&F&7&Cр"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'legenda':
+    material: paper
+    display_name: '&x&F&F&9&B&0&0Л&x&F&A&9&E&0&Fе&x&F&5&A&1&1&Fг&x&F&1&A&4&2&Eе&x&E&C&A&7&3&Dн&x&E&7&A&A&4&Dд&x&E&2&A&D&5&Cа'
+    slot: 13
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&9&B&0&0Л&x&F&A&9&E&0&Fе&x&F&5&A&1&1&Fг&x&F&1&A&4&2&Eе&x&E&C&A&7&3&Dн&x&E&7&A&A&4&Dд&x&E&2&A&D&5&Cа"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'proklyat':
+    material: paper
+    display_name: '&x&F&F&0&0&0&0П&x&F&F&0&C&0&Cр&x&F&F&1&8&1&8о&x&F&F&2&5&2&5к&x&F&F&3&1&3&1л&x&F&F&3&D&3&Dя&x&F&F&4&9&4&9т'
+    slot: 14
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&0&0&0&0П&x&F&F&0&C&0&Cр&x&F&F&1&8&1&8о&x&F&F&2&5&2&5к&x&F&F&3&1&3&1л&x&F&F&3&D&3&Dя&x&F&F&4&9&4&9т"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'arbitadsh':
+    material: paper
+    display_name: '&x&F&F&7&2&0&0А&x&F&F&7&7&0&9р&x&F&F&7&C&1&2б&x&F&F&8&1&1&Bи&x&F&F&8&6&2&4т&x&F&F&8&B&2&Dр&x&F&F&9&0&3&6а&x&F&F&9&5&3&Fж'
+    slot: 15
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&7&2&0&0А&x&F&F&7&7&0&9р&x&F&F&7&C&1&2б&x&F&F&8&1&1&Bи&x&F&F&8&6&2&4т&x&F&F&8&B&2&Dр&x&F&F&9&0&3&6а&x&F&F&9&5&3&Fж"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'dollar':
+    material: paper
+    display_name: '&x&0&0&F&F&A&2Dollar'
+    slot: 20
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&0&0&F&F&A&2Dollar"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'killer':
+    material: paper
+    display_name: '&x&F&F&6&D&4&7K&x&F&D&7&5&5&2i&x&F&A&7&D&5&Cl&x&F&8&8&5&6&7l&x&F&5&8&D&7&1e&x&F&3&9&5&7&Cr'
+    slot: 21
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&6&D&4&7K&x&F&D&7&5&5&2i&x&F&A&7&D&5&Cl&x&F&8&8&5&6&7l&x&F&5&8&D&7&1e&x&F&3&9&5&7&Cr"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'destroy':
+    material: paper
+    display_name: '&x&F&F&D&5&4&7D&x&F&F&D&3&4&0e&x&F&E&D&1&3&8s&x&F&E&C&F&3&1t&x&F&E&C&D&2&9r&x&F&D&C&B&2&2o&x&F&D&C&9&1&Ay'
+    slot: 22
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&D&5&4&7D&x&F&F&D&3&4&0e&x&F&E&D&1&3&8s&x&F&E&C&F&3&1t&x&F&E&C&D&2&9r&x&F&D&C&B&2&2o&x&F&D&C&9&1&Ay"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'godness':
+    material: paper
+    display_name: '&x&F&F&F&F&F&FG&x&F&8&F&8&F&8o&x&F&2&F&2&F&2d&x&E&B&E&B&E&Bn&x&E&4&E&4&E&4e&x&D&E&D&E&D&Es&x&D&7&D&7&D&7s'
+    slot: 23
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&F&F&F&FG&x&F&8&F&8&F&8o&x&F&2&F&2&F&2d&x&E&B&E&B&E&Bn&x&E&4&E&4&E&4e&x&D&E&D&E&D&Es&x&D&7&D&7&D&7s"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'crime':
+    material: paper
+    display_name: '&x&F&C&4&8&5&EC&x&F&D&5&6&6&Ar&x&F&E&6&3&7&6i&x&F&E&7&1&8&2m&x&F&F&7&E&8&Ee'
+    slot: 24
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&F&C&4&8&5&EC&x&F&D&5&6&6&Ar&x&F&E&6&3&7&6i&x&F&E&7&1&8&2m&x&F&F&7&E&8&Ee"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'phantom':
+    material: paper
+    display_name: '&x&7&8&A&8&D&3P&x&8&E&B&3&E&7h&x&A&4&C&0&F&Ba&x&B&A&C&C&F&Fn&x&D&0&D&9&F&Ft&x&E&6&E&5&F&Fo&x&F&C&F&2&F&Fm'
+    slot: 29
+    lore:
+    - ''
+    - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+    - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+    - ''
+    - '&fНажмите, чтобы &aустановить &fданный титул'
+    left_click_commands:
+    - '[console] lp user %player_name% meta setsuffix 100 "&x&7&8&A&8&D&3P&x&8&E&B&3&E&7h&x&A&4&C&0&F&Ba&x&B&A&C&C&F&Fn&x&D&0&D&9&F&Ft&x&E&6&E&5&F&Fo&x&F&C&F&2&F&Fm"'
+    - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+    - '[sound] ENTITY_VILLAGER_YES'
+    - '[close]'
+  'vampir':
+   material: paper
+   display_name: '&x&E&0&0&0&0&0V&x&E&0&1&8&0&0a&x&E&0&3&0&0&0m&x&E&0&4&8&0&0p&x&E&0&6&0&0&0i&x&E&0&7&8&0&0r'
+   slot: 30
+   lore:
+   - ''
+   - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+   - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+   - ''
+   - '&fНажмите, чтобы &aустановить &fданный титул'
+   left_click_commands:
+   - '[console] lp user %player_name% meta setsuffix 100 "&x&E&0&0&0&0&0V&x&E&0&1&8&0&0a&x&E&0&3&0&0&0m&x&E&0&4&8&0&0p&x&E&0&6&0&0&0i&x&E&0&7&8&0&0r"'
+   - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+   - '[sound] ENTITY_VILLAGER_YES'
+   - '[close]'
+  'nebesa':
+   material: paper
+   display_name: '&x&0&0&E&0&F&FН&x&0&0&D&1&F&Fе&x&0&0&C&2&F&Fб&x&0&0&B&3&F&Fе&x&0&0&A&4&F&Fс&x&0&0&9&5&F&Fа'
+   slot: 31
+   lore:
+   - ''
+   - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+   - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+   - ''
+   - '&fНажмите, чтобы &aустановить &fданный титул'
+   left_click_commands:
+   - '[console] lp user %player_name% meta setsuffix 100 "&x&0&0&E&0&F&FН&x&0&0&D&1&F&Fе&x&0&0&C&2&F&Fб&x&0&0&B&3&F&Fе&x&0&0&A&4&F&Fс&x&0&0&9&5&F&Fа"'
+   - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+   - '[sound] ENTITY_VILLAGER_YES'
+   - '[close]'
+  'legendary':
+   material: paper
+   display_name: '&x&F&F&D&7&0&0L&x&F&F&E&3&0&0e&x&F&F&E&F&0&0g&x&F&F&F&B&0&0e&x&F&F&F&F&0&0n&x&F&F&F&F&0&0d&x&F&F&F&F&0&0a&x&F&F&F&F&0&0r&x&F&F&F&F&0&0y'
+   slot: 32
+   lore:
+   - ''
+   - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+   - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+   - ''
+   - '&fНажмите, чтобы &aустановить &fданный титул'
+   left_click_commands:
+   - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&D&7&0&0L&x&F&F&E&3&0&0e&x&F&F&E&F&0&0g&x&F&F&F&B&0&0e&x&F&F&F&F&0&0n&x&F&F&F&F&0&0d&x&F&F&F&F&0&0a&x&F&F&F&F&0&0r&x&F&F&F&F&0&0y"'
+   - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+   - '[sound] ENTITY_VILLAGER_YES'
+   - '[close]'
+  'krasota':
+   material: paper
+   display_name: '&x&F&F&B&7&D&6К&x&F&D&A&E&E&8р&x&F&A&9&E&F&Aа&x&F&7&8&E&F&Fс&x&F&4&7&E&F&Fо&x&F&1&6&E&F&Fт&x&E&E&5&E&F&Fа'
+   slot: 33
+   lore:
+   - ''
+   - '&#FF5700┃ &fПонравился &#FF5700данный &fтитул?'
+   - '&#FF5700┃ &fТак &#FF5700установи &fего быстрее'
+   - ''
+   - '&fНажмите, чтобы &aустановить &fданный титул'
+   left_click_commands:
+   - '[console] lp user %player_name% meta setsuffix 100 "&x&F&F&B&7&D&6К&x&F&D&A&E&E&8р&x&F&A&9&E&F&Aа&x&F&7&8&E&F&Fс&x&F&4&7&E&F&Fо&x&F&1&6&E&F&Fт&x&E&E&5&E&F&Fа"'
+   - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fпоставили титул'
+   - '[sound] ENTITY_VILLAGER_YES'
+   - '[close]'                  
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+    - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+    - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] TitleMenu'
+    right_click_commands:
+      - '[openguimenu] TitleMenu'
+  'white':
+    material: orange_stained_glass_pane
+    display_name: ''
+    slots:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 18
+    - 17
+    - 26
+    - 35
+    - 37
+    - 38
+    - 39
+    - 41
+    - 42
+    - 44
+  'black':
+    material: black_stained_glass_pane
+    display_name: ''
+    slots:
+    - 0
+    - 1
+    - 9
+    - 36
+    - 44
+    - 7
+    - 8
+    - 17
+    - 27
+    - 37
+    - 43
+    - 35

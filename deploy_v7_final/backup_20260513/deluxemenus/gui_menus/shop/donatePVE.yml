@@ -1,0 +1,133 @@
+menu_title: "௛"
+open_command: pve
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 45
+items:
+  'orange_glass':
+    display_name: ' '
+    material: orange_stained_glass_pane
+    slots:
+      - 0
+      - 1
+      - 7
+      - 8
+      - 9
+      - 10
+      - 17
+      - 18
+      - 19
+      - 25
+      - 26
+      - 27
+      - 34
+      - 35
+      - 36
+      - 37
+      - 43
+      - 44
+      - 16
+
+  'black_glass':
+    display_name: ' '
+    material: black_stained_glass_pane
+    slots:
+      - 2
+      - 6
+      - 11
+      - 15
+      - 28
+      - 29
+      - 33
+      - 38
+      - 42
+
+  'gray_glass':
+    display_name: ' '
+    material: gray_stained_glass_pane
+    slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      - 39
+      - 41
+
+  'spawners':
+    display_name: '&#FF5700&lС&#FB5600&lп&#F75400&lа&#F35300&lв&#EF5200&lн&#EB5000&lе&#E74F00&lр&#E34E00&lа'
+    slot: 20
+    material: spawner
+    lore:
+      - '&r'
+      - ' &#FF5700&l▎ &7Разные §x§F§F§5§7§0§0спавнера &7для добычи'
+      - ' &#FF5700&l▎ &7§x§F§F§5§7§0§0ресурсов &7и опыта.'
+      - '&r'
+      - '&#FF5700Нажмите, чтобы открыть'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donateSPAWNERS'
+    right_click_commands:
+      - '[openguimenu] donateSPAWNERS'
+
+  'eggs':
+    display_name: '&#FF5700&lЯ&#FC5600&lй&#F95500&lц&#F65400&lа &#F35300&lм&#F05200&lо&#ED5100&lб&#EA5000&lо&#E74F00&lв'
+    slot: 22
+    material: zombie_spawn_egg
+    lore:
+      - '&r'
+      - ' &#FF5700&l▎ &7§x§F§F§5§7§0§0Яйца §7для призыва §x§F§F§5§7§0§0мобов'
+      - ' &#FF5700&l▎ &7в любом месте сервера.'
+      - '&r'
+      - '&#FF5700Нажмите, чтобы открыть'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donateEGG'
+    right_click_commands:
+      - '[openguimenu] donateEGG'
+
+  'other':
+    display_name: '&#FF5700&lД&#FC5600&lр&#F85500&lу&#F45300&lг&#F05200&lо&#EC5100&lе'
+    slot: 24
+    material: heart_of_the_sea
+    lore:
+      - '&r'
+      - ' &#FF5700&l▎ &7Особые §x§F§F§5§7§0§0ПВЕ-предметы:'
+      - ' &#FF5700&l▎ &7§x§F§F§5§7§0§0Житель Фармер &7и др.'
+      - '&r'
+      - '&#FF5700Нажмите, чтобы открыть'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donatePVEOTHER'
+    right_click_commands:
+      - '[openguimenu] donatePVEOTHER'
+
+  'back':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв магазин.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
