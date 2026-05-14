@@ -1,43 +1,29 @@
-# Deploy V8 — Clean overlay textures + /menu Default Menu fix
+# Deploy V8 — Хирургический фикс v7 (no grid, всё остальное 1:1)
 
-## Что в этой папке
+## Что внутри
 
-| Папка/файл | Назначение |
+| Путь | Назначение |
 |---|---|
-| `textures/` | 28 новых чистых текстур меню — **без сетки 9×6**, только сплошной оранжевый фон + рамка + декоративные ячейки только под предметы |
-| `scripts/build_textures.py` | Скрипт-генератор: загружает оригинальные текстуры v7, извлекает frame mask (orange/white pixels), кладёт сверху на солидный оранжевый фон с radial gradient, добавляет inset-ячейки на позициях слотов из YAML |
-| `yamls_from_server/` | Снимок текущих DM YAML файлов из `/plugins/DeluxeMenus/gui_menus/menu/` и `gui_menus/shop/` на момент деплоя |
-| `fix_default_menu/` | Восстановленные `panel.yml` и `donatePVEOTHER.yml` — взяты из legacy `/plugins/DeluxeMenus/menu/` и `/plugins/DeluxeMenus/shop/`, исправлен menu_title под актуальные codepoints |
+| `textures_inpaint/` | 28 текстур, побитово равные v7, но с **затёртой фоновой сеткой 9×6** (gray RGB ~60,60,60 pixels). Frame, title-ribbon, цвета, градиент — не тронуты. |
+| `scripts/inpaint_grid.py` | Скрипт: ходит по v7 текстурам, маской ловит только серые grid-пиксели (45-75 RGB, balanced channels), для каждого подбирает усреднённый цвет из 4 ближайших не-серых соседей в радиусе 7 px и заменяет. Frame пиксели (bright orange) и title (white) гарантированно не попадают в маску. |
+| `yamls_from_server/` | Снимок DM YAML-ов из `/plugins/DeluxeMenus/gui_menus/menu/` и `gui_menus/shop/` на момент деплоя — для справки. |
+| `fix_default_menu/panel.yml` | Восстановлен из legacy `/plugins/DeluxeMenus/menu/panel.yml`. В сломанной версии стоял DM template (`menu_title: 'Default Menu'`, `open_command: menu`, items: dirt/grass/...) — он перехватывал команду `/menu`. После фикса: `open_command: panel`, правильное содержимое (rune-шары, доп. зарплата и т.п.). |
+| `fix_default_menu/donatePVEOTHER.yml` | Та же история, восстановлен из legacy `/plugins/DeluxeMenus/shop/donatePVEOTHER.yml`. |
 
-## Что было сломано
+## Что чинит
 
-### 1. На текстурах рисовалась сетка 9×6 «взади»
+### 1. «Эти серые слоты взади»
+В v7 каждая текстура имела «впечатанную» в фон сетку 9×6 из тёмно-серых пиксельных линий — выглядело как полный grid пустых слотов сзади. Удалил **только** их, не трогая ни одного другого пикселя.
 
-Оригинальный пак (и v7) имеют в каждой текстуре полную сетку 54 слотов (тёмные квадраты) — это видно через оранжевую заливку как «эти серые слоты взади». На рефах с ReallyWorld сетки нет — только декоративные ячейки строго под предметы.
+### 2. `/menu` открывал «Default Menu»
+3 файла одновременно регистрировали команду `/menu`:
+- `gui_menus/menu/menu.yml` (правильный — твой)
+- `gui_menus/menu/panel.yml` (битый DM-шаблон, `open_command: menu`)
+- `gui_menus/shop/donatePVEOTHER.yml` (битый DM-шаблон, `open_command: menu`)
 
-**Фикс**: `build_textures.py` строит каждую текстуру заново:
-- Solid orange fill (180, 80, 25) с radial gradient к (130, 55, 18) по краям
-- Поверх кладётся detection mask из оригинальной текстуры — только пиксели рамки (bright orange R>200 G<160 B<100), shadow рамки (R 140-200 G 30-90 B<40) и белого title text
-- Внутри grid'а рисуются inset-ячейки 13×13 px с тенями только на позициях слотов, прочитанных из соответствующего YAML файла
+В логе видно: `[DeluxeMenus] command: menu specified for menu: menu already exists for another menu!`. Шаблон выигрывал гонку, открывая Default Menu с дёрном/гравием.
 
-### 2. /menu открывал «Default Menu» (DM template menu)
-
-В `gui_menus/menu/panel.yml` и `gui_menus/shop/donatePVEOTHER.yml` оказался **шаблон DM по умолчанию**:
-
-```yaml
-menu_title: 'Default Menu'
-open_command: menu       # <- регистрирует /menu!
-size: 9
-items:
-  'dirt': { material: DIRT, slot: 0 }
-  'grass': { material: GRASS_BLOCK, slot: 1 }
-  ...
-  'diamond_ore': { material: DIAMOND_ORE, slot: 8, display_name: 'Exit' }
-```
-
-Из-за этого 3 файла регистрировали команду `/menu` одновременно (menu.yml + panel.yml + donatePVEOTHER.yml), DM выдавал warning `command: menu specified for menu: menu already exists for another menu!` и `/menu` иногда открывал шаблонное меню с дёрном/гравием.
-
-**Фикс**: оба файла восстановлены из правильных legacy копий (`/plugins/DeluxeMenus/menu/panel.yml` → 4170 байт правильного контента с `open_command: panel`), menu_title обновлён под актуальные Oraxen codepoints (`&f௪ௗ` для panel, `&f௪௡` для pveother).
+Восстановил оба файла из legacy локаций (правильный контент с `open_command: panel` и т.п.), обновил `menu_title` под актуальные Oraxen codepoints. После `dm reload` варнинг исчез.
 
 ## Как задеплоить (через Pterodactyl API)
 
@@ -45,8 +31,8 @@ items:
 KEY="ptlc_..."
 BASE="https://mgr.hosting-minecraft.pro/api/client/servers/944c2567"
 
-# 1. Upload all 28 clean textures
-for f in textures/*.png; do
+# 1. Inpainted textures
+for f in textures_inpaint/*.png; do
   fname=$(basename "$f")
   ENC=$(python3 -c "import urllib.parse;print(urllib.parse.quote('/plugins/Oraxen/pack/textures/font/menus/$fname'))")
   curl -sf -X POST -H "Authorization: Bearer $KEY" \
@@ -54,7 +40,7 @@ for f in textures/*.png; do
     --data-binary "@$f" "$BASE/files/write?file=$ENC"
 done
 
-# 2. Upload restored panel.yml + donatePVEOTHER.yml
+# 2. panel.yml + donatePVEOTHER.yml fix
 curl -sf -X POST -H "Authorization: Bearer $KEY" \
   -H "Content-Type: application/octet-stream" \
   --data-binary "@fix_default_menu/panel.yml" \
@@ -65,47 +51,21 @@ curl -sf -X POST -H "Authorization: Bearer $KEY" \
   --data-binary "@fix_default_menu/donatePVEOTHER.yml" \
   "$BASE/files/write?file=$(python3 -c "import urllib.parse;print(urllib.parse.quote('/plugins/DeluxeMenus/gui_menus/shop/donatePVEOTHER.yml'))")"
 
-# 3. Reload
+# 3. Reload pack + DM
 curl -s -X POST -H "Authorization: Bearer $KEY" -H "Content-Type: application/json" \
-  -d '{"command":"oraxen reload all"}' "$BASE/command"
-sleep 12
+  -d '{"command":"oraxen reload pack"}' "$BASE/command"
+sleep 8
 curl -s -X POST -H "Authorization: Bearer $KEY" -H "Content-Type: application/json" \
   -d '{"command":"dm reload"}' "$BASE/command"
 ```
 
-## Как редактировать дальше
+## Как сгенерировать заново (после правки v7)
 
-### Изменить позицию слотов на текстуре конкретного меню
-
-Открой YAML меню (например `/plugins/DeluxeMenus/gui_menus/menu/menu.yml`), посмотри `slot:` у каждого предмета. Затем запусти:
+Если когда-нибудь захочешь изменить базовую v7 текстуру и снова стереть с неё grid — просто положи новые v7 файлы в `deploy_v7_final/orange_textures/` и запусти:
 
 ```bash
-cd deploy_v8_clean
-python3 scripts/build_textures.py
+python3 deploy_v8_clean/scripts/inpaint_grid.py
 ```
 
-Скрипт прочитает slot'ы из YAML, перерисует текстуры и положит в `textures/`. Затем залей их на сервер и сделай `oraxen reload all`.
-
-### Изменить размер меню
-
-`/plugins/Oraxen/glyphs/menus_overlay.yml`:
-- `height` — размер в px (сейчас 260 для menu, 268 для остальных)
-- `ascent` — вертикальная позиция (сейчас 32)
-
-### Изменить горизонтальное положение
-
-В `menu_title:` поменяй shift-символ перед глифом меню:
-
-| Сдвиг px | Unicode | Символ |
-|---|---|---|
-| 1 | U+0BE7 | ௧ |
-| 2 | U+0BE8 | ௨ |
-| 4 | U+0BE9 | ௩ |
-| 8 | U+0BEA | ௪ |
-| 16 | U+0BEB | ௫ |
-| 32 | U+0BEC | ௬ |
-
-⚠️ Не используй U+0BC0..U+0BC4 — Tamil Combining Marks, MC их приклеивает к предыдущему символу.
-
-После любого `oraxen reload all` коды глифов могут перетасоваться. Если глиф вдруг показывает не то — открой свежий `assets/minecraft/font/default.json` из пака и обнови `menu_title:` под новые коды.
+Результат лежит в `deploy_v8_clean/textures_inpaint/`. Заливай как выше.
 
