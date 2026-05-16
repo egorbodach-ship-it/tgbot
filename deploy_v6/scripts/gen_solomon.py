@@ -65,7 +65,8 @@ MENUS = [
     ("media",      "МЕДИА",          5),
     ("freek",      "НАГРАДЫ",        6),
     ("panel",      "ПАНЕЛЬ",         5),
-    ("egorchik",   "ЕГОРЧИК",        5),
+    # egorchik intentionally skipped — keeps the original Minecraft title
+    # texture (the player wants the Mojang-style logo there, not Solomon).
     ("akriwer",    "АКРИВЕР",        5),
     ("arrow",      "СТРЕЛЫ",         5),
     ("egg",        "ЯЙЦА",           6),
@@ -157,7 +158,12 @@ def chest_visible_box(rows, scale, shift_px):
     left_mc  = -8 - shift_px               # = 0 for menu, -? for others
     right_mc = left_mc + 176               # chest width = 176 mc-px
     top_mc   = 0                           # top of glyph
-    bottom_mc = 17 + rows * 18 + 14        # +14 for gap before player inv
+    # Bottom of the chest's slot grid in mc-px relative to top-of-glyph.
+    # Top-left of slot row r in chest-coords is (chest_y + 17 + r*18); top of
+    # glyph sits at chest_y - 19. So slot-row bottom = 17 + r*18 + 16 = 33 + r*18.
+    # We add a small +6 mc-px margin so the gold frame extends visibly past
+    # the last slot row before the player-inventory begins.
+    bottom_mc = 33 + rows * 18 + 6
 
     return (
         max(0, mc_to_png(left_mc,  scale)),
