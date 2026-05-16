@@ -1,0 +1,175 @@
+# ascent=31 height=256 (ReallyWorld approach)
+
+menu_overlay_menu:
+  texture: font/menus/menu
+  ascent: 32
+  height: 280
+  char: "\uF001"
+
+menu_overlay_donate:
+  texture: font/menus/donate
+  ascent: 32
+  height: 268
+  char: "\uF002"
+
+menu_overlay_shop:
+  texture: font/menus/shop
+  ascent: 32
+  height: 268
+  char: "\uF003"
+
+menu_overlay_events:
+  texture: font/menus/events
+  ascent: 32
+  height: 268
+  char: "\uF004"
+
+menu_overlay_help:
+  texture: font/menus/help
+  ascent: 32
+  height: 268
+  char: "\uF005"
+
+menu_overlay_portals:
+  texture: font/menus/portals
+  ascent: 32
+  height: 268
+  char: "\uF006"
+
+menu_overlay_rtp:
+  texture: font/menus/rtp
+  ascent: 32
+  height: 268
+  char: "\uF007"
+
+menu_overlay_obmen:
+  texture: font/menus/obmen
+  ascent: 32
+  height: 268
+  char: "\uF008"
+
+menu_overlay_arenda:
+  texture: font/menus/arenda
+  ascent: 32
+  height: 268
+  char: "\uF009"
+
+menu_overlay_grab:
+  texture: font/menus/grab
+  ascent: 32
+  height: 268
+  char: "\uF00A"
+
+menu_overlay_media:
+  texture: font/menus/media
+  ascent: 32
+  height: 268
+  char: "\uF00B"
+
+menu_overlay_freek:
+  texture: font/menus/freek
+  ascent: 32
+  height: 268
+  char: "\uF00C"
+
+menu_overlay_panel:
+  texture: font/menus/panel
+  ascent: 32
+  height: 268
+  char: "\uF00D"
+
+menu_overlay_egorchik:
+  texture: font/menus/egorchik
+  ascent: 50
+  height: 100
+  char: "\uF00E"
+
+menu_overlay_akriwer:
+  texture: font/menus/akriwer
+  ascent: 32
+  height: 268
+  char: "\uF00F"
+
+menu_overlay_arrow:
+  texture: font/menus/arrow
+  ascent: 32
+  height: 268
+  char: "\uF010"
+
+menu_overlay_egg:
+  texture: font/menus/egg
+  ascent: 32
+  height: 268
+  char: "\uF011"
+
+menu_overlay_items:
+  texture: font/menus/items
+  ascent: 32
+  height: 268
+  char: "\uF012"
+
+menu_overlay_livalka:
+  texture: font/menus/livalka
+  ascent: 32
+  height: 268
+  char: "\uF013"
+
+menu_overlay_potions:
+  texture: font/menus/potions
+  ascent: 32
+  height: 268
+  char: "\uF014"
+
+menu_overlay_pred:
+  texture: font/menus/pred
+  ascent: 32
+  height: 268
+  char: "\uF015"
+
+menu_overlay_pve:
+  texture: font/menus/pve
+  ascent: 32
+  height: 268
+  char: "\uF016"
+
+menu_overlay_pveother:
+  texture: font/menus/pveother
+  ascent: 32
+  height: 268
+  char: "\uF017"
+
+menu_overlay_resmenu:
+  texture: font/menus/resmenu
+  ascent: 32
+  height: 268
+  char: "\uF018"
+
+menu_overlay_reseuro:
+  texture: font/menus/reseuro
+  ascent: 32
+  height: 268
+  char: "\uF019"
+
+menu_overlay_resmoneta:
+  texture: font/menus/resmoneta
+  ascent: 32
+  height: 268
+  char: "\uF01A"
+
+menu_overlay_shari:
+  texture: font/menus/shari
+  ascent: 32
+  height: 268
+  char: "\uF01B"
+
+menu_overlay_spawners:
+  texture: font/menus/spawners
+  ascent: 32
+  height: 268
+  char: "\uF01C"
+
+menu_overlay_aukcion:
+  texture: font/menus/aukcion
+  ascent: 32
+  height: 268
+  char: "\uF01D"
