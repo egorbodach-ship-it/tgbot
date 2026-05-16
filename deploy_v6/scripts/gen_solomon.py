@@ -182,14 +182,18 @@ def shift_px_for(name):
     # IMPORTANT: this MUST match what's actually in the menu_title:
     # - If menu_title is just "ோ" (a single Tamil char, no shift prefix)
     #   then the glyph's top-left in chest is at MC px (chest_x + 8, chest_y - 19),
-    #   so shift_px must be 0.
-    # - If menu_title contains a leading shift glyph like "\uF823ோ" with
-    #   advance=-8, then shift_px should be -8.
+    #   so shift_px must be 0 — but then there's an 8-mc-px stone gap on the
+    #   LEFT side of the chest (texture cannot reach chest_x).
+    # - If menu_title contains a leading shift glyph (e.g. menu_shift_8 from
+    #   custom_shifts.yml = U+E101, advance -8), then the glyph origin is
+    #   pulled left by 8 mc-px so it starts at chest_x. Then shift_px = -8
+    #   here, AND the texture fills the entire chest width with no gap.
     #
-    # Live YAMLs currently use the simple form (no shift prefix), so we use 0.
-    # If this changes, update the menu_title for ALL menus AND change this
-    # function in lockstep.
-    return 0
+    # We use the second form (shift prefix + shift_px=-8) which matches the
+    # original working layout. For `menu` we use -12 because its glyph is
+    # rendered slightly bigger (height=280 vs 268) so the centering math
+    # needs an extra 4-px nudge.
+    return -12 if name == "menu" else -8
 
 
 # ---------------------------------------------------------------------------
