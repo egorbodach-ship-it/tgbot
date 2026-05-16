@@ -179,8 +179,17 @@ def render_height_for(name):
     return 280 if name == "menu" else 268
 
 def shift_px_for(name):
-    # See math in TASK_FOR_NEXT_SESSION.md §"Чтобы меню по центру"
-    return -12 if name == "menu" else -8
+    # IMPORTANT: this MUST match what's actually in the menu_title:
+    # - If menu_title is just "ோ" (a single Tamil char, no shift prefix)
+    #   then the glyph's top-left in chest is at MC px (chest_x + 8, chest_y - 19),
+    #   so shift_px must be 0.
+    # - If menu_title contains a leading shift glyph like "\uF823ோ" with
+    #   advance=-8, then shift_px should be -8.
+    #
+    # Live YAMLs currently use the simple form (no shift prefix), so we use 0.
+    # If this changes, update the menu_title for ALL menus AND change this
+    # function in lockstep.
+    return 0
 
 
 # ---------------------------------------------------------------------------
