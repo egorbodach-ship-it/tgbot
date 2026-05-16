@@ -1,0 +1,85 @@
+# Oraxen glyphs config for the rank tags.
+# Place this file at: /plugins/Oraxen/glyphs/wellsetups_ranks.yml
+# Place all PNG files at: /plugins/Oraxen/pack/textures/wellsetups_ranks/*.png
+# After placing, run: /oraxen reload all
+
+# Each rank uses a fixed Private Use Area codepoint (\uF200..) so it doesn't
+# clash with the menu glyphs in the Tamil block (\u0BCB..\u0BFF).
+
+ws_owner:
+  texture: wellsetups_ranks/wellsetups_ranks_owner
+  ascent: 8
+  height: 10
+  char: "\uF200"
+
+ws_admin:
+  texture: wellsetups_ranks/wellsetups_ranks_admin
+  ascent: 8
+  height: 10
+  char: "\uF201"
+
+ws_dadmin:
+  texture: wellsetups_ranks/wellsetups_ranks_dadmin
+  ascent: 8
+  height: 10
+  char: "\uF202"
+
+ws_solomon:
+  texture: wellsetups_ranks/wellsetups_ranks_solomon
+  ascent: 8
+  height: 10
+  char: "\uF203"
+
+ws_osiris:
+  texture: wellsetups_ranks/wellsetups_ranks_osiris
+  ascent: 8
+  height: 10
+  char: "\uF204"
+
+ws_phonix:
+  texture: wellsetups_ranks/wellsetups_ranks_phonix
+  ascent: 8
+  height: 10
+  char: "\uF205"
+
+ws_nebula:
+  texture: wellsetups_ranks/wellsetups_ranks_nebula
+  ascent: 8
+  height: 10
+  char: "\uF206"
+
+ws_triton:
+  texture: wellsetups_ranks/wellsetups_ranks_triton
+  ascent: 8
+  height: 10
+  char: "\uF207"
+
+ws_hydra:
+  texture: wellsetups_ranks/wellsetups_ranks_hydra
+  ascent: 8
+  height: 10
+  char: "\uF208"
+
+ws_aqua:
+  texture: wellsetups_ranks/wellsetups_ranks_aqua
+  ascent: 8
+  height: 10
+  char: "\uF209"
+
+ws_morph:
+  texture: wellsetups_ranks/wellsetups_ranks_morph
+  ascent: 8
+  height: 10
+  char: "\uF20A"
+
+ws_axolot:
+  texture: wellsetups_ranks/wellsetups_ranks_axolot
+  ascent: 8
+  height: 10
+  char: "\uF20B"
+
+ws_vernal:
+  texture: wellsetups_ranks/wellsetups_ranks_vernal
+  ascent: 8
+  height: 10
+  char: "\uF20C"
