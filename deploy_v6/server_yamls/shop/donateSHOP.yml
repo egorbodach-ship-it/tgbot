@@ -1,0 +1,209 @@
+menu_title: "ை"
+open_command:
+- shop
+- shops
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 53
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+  '21':
+    display_name: '&#FF5700&lУ&#FE5700&lн&#FC5600&lи&#FB5600&lк&#F95500&lа&#F85500&lл&#F75400&lн&#F55400&lы&#F45300&lе &#F15200&lп&#EF5200&lр&#EE5100&lе&#ED5100&lд&#EB5000&lм&#EA5000&lе&#E84F00&lт&#E74F00&lы'
+    slot: 21
+    material: netherite_chestplate
+    lore:
+    - '&r'
+    - ' &7Уникальные предметы сервера,'
+    - ' &7которые можно только'
+    - ' &7купить, либо выбить!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donateITEMS2'
+  '22':
+    display_name: '&#FF5700&lП&#FE5700&lе&#FC5600&lч&#FB5600&lк&#F95500&lи &#F75400&lи &#F45300&lЗ&#F25300&lе&#F15200&lл&#EF5200&lь&#EE5100&lе&#ED5100&lв&#EB5000&lа&#EA5000&lр&#E84F00&lк&#E74F00&lи'
+    slot: 22
+    material: furnace
+    lore:
+    - '&r'
+    - ' &7Уникальные печки и зельеварики,'
+    - ' &7которые более эффективнее'
+    - ' &7чем обычные!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donatePRED'
+
+  '23':
+    display_name: '&#FF5700&lВ&#FC5600&lс&#F95500&lё &#F35300&lд&#F05200&lл&#ED5100&lя &#E74F00&lП&#E44E00&lВ&#E14D00&lЕ'
+    slot: 23
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ3ZTJlNWQ1NWI2ZDA0OTQzNTE5YmVkMjU1N2M2MzI5ZTMzYjYwYjkwOWRlZTg5MjNjZDg4YjExNTIxMCJ9fX0=
+    lore:
+    - '&r'
+    - ' &7Спавнера, яйца мобов и другие '
+    - ' &7предметы для ПВЕ-фарма!'
+    - '&r'
+    - '&#FF5700Нажмите, чтобы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donatePVE'
+    right_click_commands:
+      - '[openguimenu] donatePVE'
+  '29':
+    display_name: '&#FF5700&lУ&#FD5600&lн&#FC5600&lи&#FA5500&lк&#F85500&lа&#F65400&lл&#F55400&lн&#F35300&lы&#F15200&lе &#EE5100&lЗ&#EC5100&lе&#EA5000&lл&#E95000&lь&#E74F00&lя'
+    slot: 29
+    material: splash_potion
+    lore:
+    - '&r'
+    - ' &7Получите эффекты которые нельзя '
+    - ' &7создать, станьте могущественнее чем другие!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    - HIDE_POTION_EFFECTS
+    left_click_commands:
+      - '[openguimenu] donatePOTIONS'
+  '30':
+    display_name: '&#FF5700&lК&#FD5600&lа&#FB5600&lс&#F95500&lт&#F75400&lо&#F55400&lм &#F15200&lс&#EF5200&lт&#ED5100&lр&#EB5000&lе&#E95000&lл&#E74F00&lы'
+    slot: 30
+    material: tipped_arrow
+    lore:
+    - '&r'
+    - ' &7Тут стрелы для киллеров '
+    - ' &7купи и стань убийцей смертников!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    - HIDE_POTION_EFFECTS
+    left_click_commands:
+      - '[openguimenu] donateARROW'
+  '31':
+    display_name: '&#FF5700&lШ&#FD5600&lа&#FB5600&lр&#F85500&lы &#F45300&lс&#F25300&lе&#F05200&lр&#EE5100&lв&#EB5000&lе&#E95000&lр&#E74F00&lа'
+    slot: 31
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTIwNzE2MjAzZGEwMzljYWZjYTI0YmJkOWYzZTliZDVjNjk4NWMzYzI1NTI3YmNkNTA2ZDM4OGU5OWJiN2FmZSJ9fX0=
+    lore:
+    - '&r'
+    - ' &7В этом магазине вы можете закупиться '
+    - ' &7крутыми шарами, чтобы использовать их!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donateSHARI'
+  '32':
+    display_name: '&#FF5700&lР&#FC5600&lа&#FA5500&lс&#F75400&lх&#F45300&lо&#F25300&lд&#EF5200&lн&#EC5100&lи&#EA5000&lк&#E74F00&lи'
+    slot: 32
+    material: golden_apple
+    lore:
+    - '&r'
+    - ' &7Не хватает обычных расходников? '
+    - ' &7Заходи, тут ты сможешь купить'
+    - ' &7в любое время то что тебе нужно!'
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    enchantments:
+    - KNOCKBACK;1
+    item_flags:
+    - HIDE_ENCHANTS
+    - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[openguimenu] donateRESMENU'
+  '33':
+    display_name: '&#FF5700&lЛ&#FB5600&lи&#F75400&lв&#F35300&lа&#EF5200&lл&#EB5000&lк&#E74F00&lа'
+    slot: 33
+    material: orange_dye
+    lore:
+    - '&r'
+    - ' &7Даная штука достаточно редкая, по этому '
+    - ' &7успей её купить! говорят не 10 жизней спасла.. '
+    - '&r'
+    - '&#FF5700Нажмите, что бы открыть'
+    left_click_commands:
+      - '[openguimenu] donateLIVALKA'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 49
+    material: spectral_arrow
+    lore:
+    - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+    - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] menu'
+    right_click_commands:
+      - '[openguimenu] menu'
+

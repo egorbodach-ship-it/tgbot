@@ -1,0 +1,10 @@
+box_selection:
+  content:
+    - '&2Выберите:'
+    - ''
+    - '%dynamicRow%'
+    - '%dynamicRow%'
+    - '%dynamicRow%'
+    - '%dynamicRow%'
+    - '%dynamicRow%'
+    - '%dynamicRow%'

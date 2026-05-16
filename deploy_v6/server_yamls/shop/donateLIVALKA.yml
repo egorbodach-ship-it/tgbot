@@ -1,0 +1,90 @@
+menu_title: "௘"
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+  'Ливалка':
+    display_name: '&x&F&F&5&7&0&0&lЛ&x&F&B&5&6&0&0&lи&x&F&7&5&4&0&0&lв&x&F&3&5&3&0&0&lа&x&E&F&5&2&0&0&lл&x&E&B&5&0&0&0&lк&x&E&7&4&F&0&0&lа'
+    lore:
+      - '&r'
+      - ' &#FF5700&l▎ &7Даная §x§F§F§5§7§0§0штука &7вам очень поможет от'
+      - ' &#FF5700&l▎ &7злых игроков которые §x§F§F§5§7§0§0нападают'
+      - ' &#FF5700&l▎ &7также §x§F§F§5§7§0§0вас &7тепнет на §x§F§F§5§7§0§0255 блоков &7верх и'
+      - ' &#FF5700&l▎ &7поставит §x§F§F§5§7§0§0пол &7из стекла на §x§F§F§5§7§0§010 сек &7для лива.'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8350 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: orange_dye
+    slot: 22
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 350
+      deny_commands:
+        - '[message] &#2B93FC&l▸ &7У вас недостаточно крон. Пополнить счёт можно на нашем сайте - &x&F&B&5&4&0&Dᴡᴡᴡ.ꜱᴏʟᴏᴍᴏɴɢʀɪᴇꜰ.ꜱʜᴏᴘ'
+    left_click_commands:
+      - '[console] points take %player_name% 350'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF5700350 ₪'
+      - '[console] giveci %player_name% ливалка 1'
+      - '[refresh]'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'

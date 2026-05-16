@@ -1,0 +1,176 @@
+menu_title: "௏"
+open_command:
+  - grab
+register_command: true
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 21
+      - 23
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+  'whiteplusrun_yes':
+    material: chest_minecart
+    slot: 20
+    priority: 1
+    display_name: '&7« &x&F&B&5&4&0&DБесплатный Кейс &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получать свой'
+      - '&#FF5700┃&f Уникальный. После нажатия вы'
+      - '&#FF5700┃&f Украдете донат кейс'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите чтобы &aзабрать &fкейс'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_nevercase.cooldown%'
+          output: 'no'
+    left_click_commands:
+    - '[console] lp user %player_name% permission settemp nevercase.cooldown true 1d'
+    - '[console] tccr give donate_free %player_name% 1'
+    - '[close]'
+  'whiteplusrun_no':
+    material: minecart
+    slot: 20
+    priority: 3
+    update: true
+    display_name: '&7« &x&F&B&5&4&0&DБесплатный Кейс &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получать свой'
+      - '&#FF5700┃&f Уникальный. После нажатия вы'
+      - '&#FF5700┃&f Украдете донат кейс'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fПопробуйте &cзабрать &fпозже'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_nevercase.cooldown%'
+          output: 'yes'
+  'whiteplusrub_yes':
+    material: chest_minecart
+    slot: 22
+    priority: 1
+    display_name: '&7« &x&F&B&5&4&0&DБесплатные Деньги &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получить свою'
+      - '&#FF5700┃&f Дополнительную зарплату. После нажатия'
+      - '&#FF5700┃&f Украдете евро они будут на вашем балансе'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите чтобы &aукрасть &fденьги'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_neverdenga.cooldown%'
+          output: 'no'
+    left_click_commands:
+    - '[console] lp user %player_name% permission settemp neverdenga.cooldown true 1d'
+    - '[console] p give %player_name% 50'
+    - '[close]'
+  'whiteplusrub_no':
+    material: minecart
+    slot: 22
+    priority: 3
+    update: true
+    display_name: '&7« &x&F&B&5&4&0&DБесплатные Деньги &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получить свою'
+      - '&#FF5700┃&f Дополнительную зарплату. После нажатия'
+      - '&#FF5700┃&f Украдете евро они будут на вашем балансе'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fПопробуйте &cукрасть &fпозже'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_neverdenga.cooldown%'
+          output: 'yes'
+  'whiteplusruуb_yes':
+    material: chest_minecart
+    slot: 24
+    priority: 1
+    display_name: '&7« &x&F&B&5&4&0&DБесплатный кит &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получить свою'
+      - '&#FF5700┃&f Дополнительную зарплату. После нажатия'
+      - '&#FF5700┃&f Украдете кит с банка сервера'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите чтобы &aзабрать &fкит'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_neverkits.cooldown%'
+          output: 'no'
+    left_click_commands:
+    - '[console] lp user %player_name% permission settemp neverkits.cooldown true 1d'
+    - '[console] playerkits give osiris %player_name% '
+    - '[close]'
+  'whiteplusrуub_no':
+    material: minecart
+    slot: 24
+    priority: 3
+    update: true
+    display_name: '&7« &x&F&B&5&4&0&DБесплатный кит &7»'
+    lore:
+      - ''
+      - '&#FF5700┃&f Нажмите, чтобы получить свою'
+      - '&#FF5700┃&f Дополнительную зарплату. После нажатия'
+      - '&#FF5700┃&f Украдете кит с банка сервера'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fПопробуйте &cзабрать &fпозже'
+    view_requirement:
+      requirements:
+        cooldown_check:
+          type: string equals
+          input: '%luckperms_has_permission_neverkits.cooldown%'
+          output: 'yes'

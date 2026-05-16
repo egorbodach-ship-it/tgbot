@@ -81,7 +81,81 @@ MENUS = [
     ("resmoneta",  "РЕСУРСЫ МОНЕТА", 5),
     ("shari",      "СФЕРЫ",          6),
     ("spawners",   "СПАВНЕРЫ",       5),
+    # New Solomon glyphs for plugins outside DeluxeMenus.
+    # aukcion: BAuction /plugins/BAuction/menu/home.yml (size=54, all slots)
+    # cases:   TreasureCoCaseReloaded /plugins/TreasureCoCaseReloaded/invgui.yml (6×9)
+    # skupschik: sSeller /plugins/sSeller/config.yml (5×9)
+    ("aukcion",    "АУКЦИОН",        6),
+    ("cases",      "КЕЙСЫ",          6),
+    ("skupschik",  "СКУПЩИК",        6),
 ]
+
+
+# ---------------------------------------------------------------------------
+# Per-menu YAML lookup — used to draw slot bezels ONLY at slots that the
+# YAML actually uses (no more bezels in pure-decoration corners).
+# Entry None = "draw the full grid as before" (fallback for unknown menus).
+# ---------------------------------------------------------------------------
+SERVER_YAMLS_DIR = os.path.join(_THIS_DIR, "..", "server_yamls")
+
+YAML_LOOKUP = {
+    # name → relative yaml path inside server_yamls/
+    "menu":      "menu/menu.yml",
+    "donate":    "menu/donate.yml",
+    "events":    "menu/events.yml",
+    "help":      "menu/help.yml",
+    "portals":   "menu/portals.yml",
+    "rtp":       "menu/rtp.yml",
+    "obmen":     "menu/obmen.yml",
+    "arenda":    "menu/arenda.yml",
+    "grab":      "menu/grab.yml",
+    "media":     "menu/media.yml",
+    "panel":     "menu/panel.yml",
+    "akriwer":   "menu/akriwer.yml",
+    # The big shops via DeluxeMenus
+    "shop":      "shop/donateSHOP.yml",
+    "freek":     None,  # not in DM — leave full
+    "arrow":     "shop/donateARROW.yml",
+    "egg":       "shop/donateEGG.yml",
+    "items":     "shop/donateITEMS2.yml",
+    "livalka":   "shop/donateLIVALKA.yml",
+    "potions":   "shop/donatePOTIONS.yml",
+    "pred":      "shop/donatePRED.yml",
+    "pve":       "shop/donatePVE.yml",
+    "pveother":  "shop/donatePVEOTHER.yml",
+    "resmenu":   "shop/donateRESMENU.yml",
+    "reseuro":   "shop/donateRESEURO.yml",
+    "resmoneta": "shop/donateRESMONETA.yml",
+    "shari":     "shop/donateSHARI.yml",
+    "spawners":  "shop/donateSPAWNERS.yml",
+    # External plugins
+    "aukcion":   "bauc/home.yml",
+    "cases":     None,   # TreasureCoCase has different schema; full grid
+    "skupschik": None,   # sSeller config; full grid
+}
+
+
+def used_slots_for(name, fallback_rows):
+    """
+    Look up the YAML for `name` and return (rows, used_slot_set).
+    If no YAML is configured or extraction fails, returns
+    (fallback_rows, set(range(fallback_rows*9))) — i.e. full grid.
+    """
+    rel = YAML_LOOKUP.get(name)
+    if rel is None:
+        return fallback_rows, set(range(fallback_rows * 9))
+    path = os.path.join(SERVER_YAMLS_DIR, rel)
+    try:
+        from slot_extractor import slots_for_menu
+        rows, slots = slots_for_menu(path)
+    except Exception as e:
+        print(f"  WARN [{name}] slot extraction failed: {e}", file=sys.stderr)
+        return fallback_rows, set(range(fallback_rows * 9))
+    if rows is None:
+        rows = fallback_rows
+    if not slots:
+        return rows, set(range(rows * 9))
+    return rows, set(slots)
 
 
 # ---------------------------------------------------------------------------
@@ -495,6 +569,11 @@ def render_menu_glyph(name, label, rows):
     shift  = shift_px_for(name)
     scale  = height / CANVAS
 
+    # Pull the actually-used slots from the live YAML on the server (if known).
+    # `actual_rows` may differ from `rows` we hard-coded; trust the YAML.
+    actual_rows, used_slots = used_slots_for(name, rows)
+    rows = actual_rows
+
     img = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
 
     box = chest_visible_box(rows, scale, shift)
@@ -543,9 +622,13 @@ def render_menu_glyph(name, label, rows):
 
     draw_nameplate(img, plate_box, label)
 
-    # 7. Slot grid — exactly where MC will draw the 9×N slot bezels
+    # 7. Slot grid — only at slots that the YAML actually uses, so that
+    # decorative empty corners (gradient + damask) stay visible.
     for r in range(rows):
         for c in range(9):
+            slot_idx = r * 9 + c
+            if slot_idx not in used_slots:
+                continue
             rect = slot_rect_png(r, c, scale, shift)
             # Skip if rect would extend outside canvas
             if rect[2] > CANVAS or rect[3] > CANVAS:
