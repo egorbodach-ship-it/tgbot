@@ -479,24 +479,37 @@ def char_width(ch):
     return 7 if ch in GLYPHS else 7  # fixed-width
 
 
-def render_text(text, color=(255, 255, 255), shadow=None, scale=1, spacing=1):
+def render_text(text, color=(255, 255, 255), shadow=None, scale=1, spacing=1, bold=False):
     """
     Rasterize a string with the embedded font.
     Returns an RGBA image just big enough to hold the glyphs (+1px shadow margin).
     Unknown chars render as blanks.
+
+    bold=True doubles each filled pixel one step to the right ("fake bold"),
+    making strokes thicker without redesigning the bitmap. The visible glyph
+    width grows by 1px, and inter-letter spacing is kept by widening the
+    canvas by +1 per character.
     """
     text = text.upper()
     glyph_w = 7
     glyph_h = 9
+    bold_pad = 1 if bold else 0
+    # Effective per-character advance includes the bold pad so adjacent glyphs
+    # never collide.
     n = len(text)
-    raw_w = n * glyph_w + (n - 1) * spacing if n else 0
+    advance = glyph_w + bold_pad + spacing
+    raw_w = (n * advance - spacing) if n else 0
     raw_h = glyph_h
     margin = 1 if shadow else 0
-    img = Image.new('RGBA', ((raw_w + margin) * scale, (raw_h + margin) * scale), (0, 0, 0, 0))
+    # add bold_pad to right margin so the boldened last column has room
+    img = Image.new(
+        'RGBA',
+        ((raw_w + margin + bold_pad) * scale, (raw_h + margin) * scale),
+        (0, 0, 0, 0),
+    )
     pixels = img.load()
 
     def put_pixel(px, py, col):
-        # scale up
         for dy in range(scale):
             for dx in range(scale):
                 xi = px * scale + dx
@@ -506,7 +519,7 @@ def render_text(text, color=(255, 255, 255), shadow=None, scale=1, spacing=1):
 
     for offset_x, ch in enumerate(text):
         glyph = GLYPHS.get(ch, GLYPHS[' '])
-        x0 = offset_x * (glyph_w + spacing)
+        x0 = offset_x * advance
         for row_idx, bits in enumerate(glyph):
             for col_idx in range(glyph_w):
                 bit = (bits >> (glyph_w - 1 - col_idx)) & 1
@@ -514,8 +527,14 @@ def render_text(text, color=(255, 255, 255), shadow=None, scale=1, spacing=1):
                     continue
                 gx = x0 + col_idx
                 gy = row_idx
-                if shadow:
-                    put_pixel(gx + 1, gy + 1, shadow + (255,) if len(shadow) == 3 else shadow)
-                put_pixel(gx, gy, color + (255,) if len(color) == 3 else color)
+                col_rgba = color + (255,) if len(color) == 3 else color
+                shadow_rgba = (shadow + (255,)) if shadow and len(shadow) == 3 else shadow
+                if shadow_rgba:
+                    put_pixel(gx + 1, gy + 1, shadow_rgba)
+                    if bold:
+                        put_pixel(gx + 2, gy + 1, shadow_rgba)
+                put_pixel(gx, gy, col_rgba)
+                if bold:
+                    put_pixel(gx + 1, gy, col_rgba)
 
     return img

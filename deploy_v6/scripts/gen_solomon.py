@@ -6,8 +6,9 @@ Produces 256×256 RGBA PNGs that, when rendered with Oraxen glyph parameters
 (height=280 for `menu`, height=268 for everything else, ascent=32), tile
 exactly over a Minecraft 1.16.5 chest GUI's slot area.
 
-Style: stone background, gold ornate frame, Star-of-David corners, crown,
-orange→red gradient nameplate, white 7×9 Cyrillic title with drop-shadow.
+Style: warm orange→yellow radial gradient backdrop with subtle damask
+diamonds, ornate gold frame with bevel, Star-of-David corners, crown,
+deep red→orange nameplate, bold white 7×9 Cyrillic title with drop-shadow.
 
 Usage:
     python3 gen_solomon.py --out ../textures_solomon
@@ -99,35 +100,39 @@ def shift_px_for(name):
 
 
 # ---------------------------------------------------------------------------
-# Solomon palette (orange/red brand ↔ gothic gold/stone)
+# Solomon palette (orange→yellow brand gradient + ornate gold accents)
 # ---------------------------------------------------------------------------
 
-# Base stone
-COL_STONE_DARK   = (38, 32, 28, 255)        # near-black warm
-COL_STONE_MID    = (62, 52, 44, 255)
-COL_STONE_LIGHT  = (88, 74, 62, 255)
-COL_STONE_HL     = (112, 96, 80, 255)        # rare highlight pixel
+# Backdrop gradient (radial: bright yellow at center → deep orange at edges)
+COL_BG_CENTER    = (255, 224, 110, 255)     # warm yellow
+COL_BG_MID       = (255, 168,  46, 255)     # saturated orange
+COL_BG_EDGE      = (188,  72,  10, 255)     # deep burnt orange
+COL_BG_VIGNETTE  = (108,  32,   6, 255)     # near-black warm (corners)
+
+# Damask / arabesque pattern accents on the backdrop
+COL_DAMASK_LT    = (255, 220, 130, 60)      # subtle highlight
+COL_DAMASK_DK    = (140,  56,  10, 70)      # subtle shadow line
 
 # Gold frame
-COL_GOLD_DEEP    = (107, 70, 18, 255)
-COL_GOLD_MID     = (191, 138, 36, 255)
-COL_GOLD_BRIGHT  = (255, 213, 92, 255)
+COL_GOLD_DEEP    = (107,  70,  18, 255)
+COL_GOLD_MID     = (191, 138,  36, 255)
+COL_GOLD_BRIGHT  = (255, 213,  92, 255)
 COL_GOLD_HILITE  = (255, 240, 168, 255)
 
-# Orange/red nameplate gradient
-COL_PLATE_TOP    = (255, 160, 40, 255)
-COL_PLATE_BOTTOM = (170, 25,  10, 255)
+# Red nameplate (now red→deep red, contrasts strongly with orange/yellow bg)
+COL_PLATE_TOP    = (210,  50,  20, 255)
+COL_PLATE_BOTTOM = (135,  18,   8, 255)
 COL_PLATE_RIM_LT = (255, 215, 100, 255)
-COL_PLATE_RIM_DK = (95, 12, 5, 255)
+COL_PLATE_RIM_DK = ( 70,   8,   4, 255)
 
 # Slot inset
-COL_SLOT_BG      = (28, 22, 18, 255)
-COL_SLOT_RIM_LT  = (78, 66, 54, 255)
-COL_SLOT_RIM_DK  = (16, 12, 10, 255)
+COL_SLOT_BG      = ( 28,  22,  18, 255)
+COL_SLOT_RIM_LT  = ( 78,  66,  54, 255)
+COL_SLOT_RIM_DK  = ( 16,  12,  10, 255)
 
 # Text
 COL_TEXT         = (255, 248, 224, 255)
-COL_TEXT_SHADOW  = (60,  10,   0, 255)
+COL_TEXT_SHADOW  = ( 60,  10,   0, 255)
 
 
 # ---------------------------------------------------------------------------
@@ -176,41 +181,93 @@ def slot_rect_png(row, col, scale, shift_px):
 # Drawing primitives
 # ---------------------------------------------------------------------------
 
-def fill_stone(img, box, seed):
-    """Procedural stone block fill with subtle noise + cracks."""
+def fill_orange_yellow_gradient(img, box, seed):
+    """
+    Backdrop: warm orange→yellow radial gradient, with soft corner vignette
+    and a subtle damask diamond pattern on top.
+
+    Designed to feel "regal/Solomon" without being noisy: the eye is drawn
+    to the center where the nameplate sits, and the corners darken to make
+    the gold frame and Stars of David stand out.
+    """
     rng = random.Random(seed)
     px = img.load()
     x0, y0, x1, y1 = box
+    w = x1 - x0
+    h = y1 - y0
+    cx = x0 + w / 2.0
+    cy = y0 + h / 2.0
+    # Use a tight radius so the gradient finishes well within the frame.
+    max_r = math.hypot(w / 2.0, h / 2.0)
 
-    # Base dithered fill
+    def lerp(c1, c2, t):
+        return tuple(int(c1[i] * (1 - t) + c2[i] * t) for i in range(4))
+
     for y in range(y0, y1):
         for x in range(x0, x1):
-            r = rng.random()
-            if r < 0.04:
-                col = COL_STONE_HL
-            elif r < 0.20:
-                col = COL_STONE_LIGHT
-            elif r < 0.55:
-                col = COL_STONE_MID
+            # normalized radial distance 0..1
+            dx = (x - cx) / max_r
+            dy = (y - cy) / max_r
+            r = math.sqrt(dx * dx + dy * dy)
+            if r > 1.0:
+                r = 1.0
+
+            # Three-stop gradient: yellow center → orange mid → deep edge
+            if r < 0.55:
+                t = r / 0.55
+                col = lerp(COL_BG_CENTER, COL_BG_MID, t)
             else:
-                col = COL_STONE_DARK
+                t = (r - 0.55) / 0.45
+                col = lerp(COL_BG_MID, COL_BG_EDGE, t)
+
+            # Corner vignette: gentle, only kicks in past r=0.85
+            if r > 0.85:
+                vt = (r - 0.85) / 0.15
+                col = lerp(col, COL_BG_VIGNETTE, vt * 0.7)
+
+            # Light film grain to break up banding (very subtle)
+            jitter = rng.randint(-4, 4)
+            col = (
+                max(0, min(255, col[0] + jitter)),
+                max(0, min(255, col[1] + jitter)),
+                max(0, min(255, col[2] + jitter)),
+                255,
+            )
             px[x, y] = col
 
-    # Mortar lines (faint horizontal seams)
-    for sy in range(y0 + 8, y1, 14):
-        for x in range(x0, x1):
-            if rng.random() < 0.7:
-                px[x, sy] = COL_STONE_DARK
-
-    # A handful of crack lines for texture
-    for _ in range((x1 - x0) // 30):
-        cx = rng.randint(x0 + 4, x1 - 4)
-        cy = rng.randint(y0 + 4, y1 - 4)
-        for step in range(rng.randint(3, 8)):
-            if 0 <= cx < x1 and 0 <= cy < y1:
-                px[cx, cy] = COL_STONE_DARK
-            cx += rng.choice([-1, 0, 1])
-            cy += rng.choice([0, 1])
+    # ---- Damask diamond grid overlay -----------------------------------
+    # Plot a diamond (Manhattan-distance ring) every 24 px in both axes.
+    # Two-tone: highlight on top-left edge, shadow on bottom-right.
+    grid = 24
+    diamond_r = 8
+    for cy_d in range(y0 + grid // 2, y1, grid):
+        for cx_d in range(x0 + grid // 2, x1, grid):
+            for dy in range(-diamond_r, diamond_r + 1):
+                for dx in range(-diamond_r, diamond_r + 1):
+                    md = abs(dx) + abs(dy)
+                    if md == diamond_r or md == diamond_r - 1:
+                        xi = cx_d + dx
+                        yi = cy_d + dy
+                        if x0 <= xi < x1 and y0 <= yi < y1:
+                            base = px[xi, yi]
+                            if dx + dy < 0:  # top-left half: highlight
+                                hi = COL_DAMASK_LT
+                                a = hi[3] / 255.0
+                                px[xi, yi] = (
+                                    int(base[0] * (1 - a) + hi[0] * a),
+                                    int(base[1] * (1 - a) + hi[1] * a),
+                                    int(base[2] * (1 - a) + hi[2] * a),
+                                    255,
+                                )
+                            else:  # bottom-right half: shadow
+                                sh = COL_DAMASK_DK
+                                a = sh[3] / 255.0
+                                px[xi, yi] = (
+                                    int(base[0] * (1 - a) + sh[0] * a),
+                                    int(base[1] * (1 - a) + sh[1] * a),
+                                    int(base[2] * (1 - a) + sh[2] * a),
+                                    255,
+                                )
 
 
 def draw_gold_frame(img, box, thickness=3):
@@ -286,9 +343,84 @@ def draw_crown(img, cx, cy, half_w=10, h=8, color=COL_GOLD_BRIGHT, outline=COL_G
         d.point((sx, cy - h // 2 + 1), fill=COL_PLATE_RIM_LT)
 
 
+def draw_filigree(img, box):
+    """
+    Decorative gold filigree along the inside edge of the frame:
+    short curls in each corner + a small cartouche at the bottom center.
+
+    Uses small dot strokes to evoke embossed metalwork without being noisy.
+    """
+    d = ImageDraw.Draw(img)
+    x0, y0, x1, y1 = box
+    inset = 14    # pixels inside the gold frame
+    curl_r = 5    # curl radius
+
+    # Four corner curls (quarter-circles facing inward)
+    for cx, cy, q in [
+        (x0 + inset, y0 + inset, 0),                   # top-left
+        (x1 - inset - 1, y0 + inset, 1),               # top-right
+        (x0 + inset, y1 - inset - 1, 2),               # bottom-left
+        (x1 - inset - 1, y1 - inset - 1, 3),           # bottom-right
+    ]:
+        # curl arc + inner dot
+        for theta in range(0, 91, 10):
+            rad = math.radians(theta)
+            # rotate the quadrant-aligned arc to face inward
+            dx = math.cos(rad) * curl_r
+            dy = math.sin(rad) * curl_r
+            if q == 1:
+                dx = -dx
+            elif q == 2:
+                dy = -dy
+            elif q == 3:
+                dx, dy = -dx, -dy
+            xi = int(round(cx + dx))
+            yi = int(round(cy + dy))
+            d.point((xi, yi), fill=COL_GOLD_BRIGHT)
+            d.point((xi + (1 if q in (0, 2) else -1), yi), fill=COL_GOLD_DEEP)
+
+        # central dot
+        d.point((cx, cy), fill=COL_GOLD_HILITE)
+
+    # Bottom-center cartouche: small horizontal flourish (- ◇ -)
+    cy = y1 - inset - 1
+    cx = (x0 + x1) // 2
+    d.line([(cx - 14, cy), (cx - 6, cy)], fill=COL_GOLD_BRIGHT)
+    d.line([(cx + 6, cy), (cx + 14, cy)], fill=COL_GOLD_BRIGHT)
+    d.line([(cx - 14, cy + 1), (cx - 6, cy + 1)], fill=COL_GOLD_DEEP)
+    d.line([(cx + 6, cy + 1), (cx + 14, cy + 1)], fill=COL_GOLD_DEEP)
+    # tiny diamond
+    for dy in range(-3, 4):
+        for dx in range(-3, 4):
+            if abs(dx) + abs(dy) == 3:
+                d.point((cx + dx, cy + dy), fill=COL_GOLD_BRIGHT)
+            elif abs(dx) + abs(dy) == 2:
+                d.point((cx + dx, cy + dy), fill=COL_GOLD_HILITE)
+
+
+def draw_plate_glow(img, box):
+    """Soft warm-yellow glow halo around the nameplate to lift it off the bg."""
+    x0, y0, x1, y1 = box
+    cx = (x0 + x1) // 2
+    cy = (y0 + y1) // 2
+    glow_w = (x1 - x0) + 18
+    glow_h = (y1 - y0) + 14
+    glow = Image.new("RGBA", (glow_w, glow_h), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    # 3 concentric rounded rectangles, alpha decreasing outward
+    for i, alpha in enumerate([90, 60, 30]):
+        pad = i * 3
+        gd.rectangle(
+            [pad, pad, glow_w - 1 - pad, glow_h - 1 - pad],
+            outline=(255, 220, 120, alpha),
+        )
+    glow = glow.filter(ImageFilter.GaussianBlur(radius=3))
+    img.alpha_composite(glow, (cx - glow_w // 2, cy - glow_h // 2))
+
+
 def draw_nameplate(img, box, label):
-    """Orange→red vertical-gradient plaque with gold rim and bevelled edges,
-    centered cyrillic label.
+    """Red→deep red vertical-gradient plaque with gold rim and bevelled edges,
+    centered bold cyrillic label.
 
     Designed so the MC font shadow under the plaque region is invisible:
     the bottom-right pixel of every plaque pixel is intentionally dark
@@ -318,8 +450,9 @@ def draw_nameplate(img, box, label):
     for cap_x in (3, pl_w - 4):
         pdraw.line([(cap_x, 4), (cap_x, pl_h - 5)], fill=COL_GOLD_BRIGHT)
 
-    # Render text and paste centered
-    text_img = render_text(label, color=COL_TEXT, shadow=COL_TEXT_SHADOW, scale=1, spacing=1)
+    # Render text and paste centered (BOLD now)
+    text_img = render_text(label, color=COL_TEXT, shadow=COL_TEXT_SHADOW,
+                           scale=1, spacing=2, bold=True)
     tw, th = text_img.size
     if tw > pl_w - 12:
         # If it's too wide, fall back to scale=1 with tighter spacing handled
@@ -361,13 +494,16 @@ def render_menu_glyph(name, label, rows):
     box = chest_visible_box(rows, scale, shift)
     bx0, by0, bx1, by1 = box
 
-    # 1. Stone backdrop
-    fill_stone(img, box, seed=hash(name) & 0xFFFFFFFF)
+    # 1. Orange→yellow gradient backdrop with damask pattern
+    fill_orange_yellow_gradient(img, box, seed=hash(name) & 0xFFFFFFFF)
 
     # 2. Gold frame (4 px thick)
     draw_gold_frame(img, box, thickness=3)
 
-    # 3. Stars of David in each corner of the frame's interior
+    # 3. Gold filigree curls inside the frame
+    draw_filigree(img, box)
+
+    # 4. Stars of David in each corner of the frame's interior
     star_r = 6
     pad = 6 + star_r
     for cx, cy in [(bx0 + pad, by0 + pad),
@@ -376,18 +512,24 @@ def render_menu_glyph(name, label, rows):
                    (bx1 - pad - 1, by1 - pad - 1)]:
         draw_star_of_david(img, cx, cy, star_r)
 
-    # 4. Title nameplate centered horizontally near the top
-    plate_w = min(110, (bx1 - bx0) - 40)
-    # height of a single 7×9 line of text + padding
-    plate_h = 16
+    # 5. Title nameplate centered horizontally near the top.
+    # Width auto-fits the bold label so long names like "РЕСУРСЫ МОНЕТА" still
+    # read clearly. 7px glyph + 1px bold-pad + 2px spacing = 10 px per char.
+    char_advance = 10
+    label_pixels = len(label) * char_advance + 12  # +12 padding
+    plate_w = max(96, min(label_pixels, (bx1 - bx0) - 28))
+    plate_h = 18
     plate_cx = (bx0 + bx1) // 2
-    plate_top = by0 + 6   # tucked just below the gold frame top edge
+    plate_top = by0 + 7
     plate_box = (plate_cx - plate_w // 2,
                  plate_top,
                  plate_cx + plate_w // 2,
                  plate_top + plate_h)
 
-    # 5. Crown above the nameplate
+    # Halo behind plate
+    draw_plate_glow(img, plate_box)
+
+    # 6. Crown above the nameplate
     crown_cy = plate_top - 1
     crown_cx = plate_cx
     if crown_cy - 8 >= by0:
@@ -395,7 +537,7 @@ def render_menu_glyph(name, label, rows):
 
     draw_nameplate(img, plate_box, label)
 
-    # 6. Slot grid — exactly where MC will draw the 9×N slot bezels
+    # 7. Slot grid — exactly where MC will draw the 9×N slot bezels
     for r in range(rows):
         for c in range(9):
             rect = slot_rect_png(r, c, scale, shift)
