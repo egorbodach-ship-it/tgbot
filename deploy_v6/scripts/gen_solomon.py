@@ -181,18 +181,17 @@ def render_height_for(name):
 def shift_px_for(name):
     # IMPORTANT: this MUST match what's actually in the menu_title:
     # - If menu_title is just "ோ" (a single Tamil char, no shift prefix)
-    #   then the glyph's top-left in chest is at MC px (chest_x + 8, chest_y - 19),
-    #   so shift_px must be 0 — but then there's an 8-mc-px stone gap on the
-    #   LEFT side of the chest (texture cannot reach chest_x).
-    # - If menu_title contains a leading shift glyph (e.g. menu_shift_8 from
-    #   custom_shifts.yml = U+E101, advance -8), then the glyph origin is
-    #   pulled left by 8 mc-px so it starts at chest_x. Then shift_px = -8
-    #   here, AND the texture fills the entire chest width with no gap.
+    #   then shift_px must be 0 — but 8-mc-px stone gap on the LEFT side.
+    # - If menu_title contains a leading shift glyph, shift_px = -8.
     #
-    # We use the second form (shift prefix + shift_px=-8) which matches the
-    # original working layout. For `menu` we use -12 because its glyph is
-    # rendered slightly bigger (height=280 vs 268) so the centering math
-    # needs an extra 4-px nudge.
+    # We use the second form (shift prefix + shift_px=-8).
+    # For `menu` we use -12 (height=280 vs 268, extra 4-px nudge).
+    #
+    # CRITICAL: use null.png-based shift glyphs (U+0BED, U+0BEC), NOT
+    # space.png-based (U+0BC1, U+0BC4). space.png is fully transparent
+    # (alpha=0), so MC 1.16.5 BitmapProvider.findCharacterWidth() returns
+    # width=0 → advance=+1 (no shift!). null.png is opaque → width=1 →
+    # correct negative advance.
     return -12 if name == "menu" else -8
 
 
