@@ -151,8 +151,8 @@ def write_remote(path, content):
 def build_title(name):
     glyph = MENU_GLYPHS[name]
     if name == "menu":
-        return SHIFT8 + SHIFT4 + glyph  # -12 total
-    return SHIFT8 + glyph  # -8
+        return "&f" + SHIFT8 + SHIFT4 + glyph  # -12 total
+    return "&f" + SHIFT8 + glyph  # -8
 
 
 def patch_dm_file(name, path):
