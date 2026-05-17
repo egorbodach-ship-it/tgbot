@@ -77,86 +77,44 @@ def run_cmd(command):
     )
 
 
-def convert_overrides_to_items_model(overrides_json):
+def convert_overrides_to_items_model(item_name, overrides_json):
     """Convert legacy predicate overrides to 1.21.4 range_dispatch format."""
-    parent = overrides_json.get("parent", "item/generated")
     overrides = overrides_json.get("overrides", [])
 
-    # Separate CMD overrides from other predicates (e.g. pulling, blocking)
     cmd_entries = []
-    special_entries = []
-
     for ov in overrides:
         pred = ov.get("predicate", {})
         model = ov.get("model", "")
         if "custom_model_data" in pred and len(pred) == 1:
+            model_ref = model if ":" in model else f"minecraft:{model}"
             cmd_entries.append({
                 "threshold": pred["custom_model_data"],
-                "model": {"type": "model", "model": model}
+                "model": {
+                    "type": "minecraft:model",
+                    "model": model_ref
+                }
             })
-        else:
-            special_entries.append(ov)
-
-    if not cmd_entries:
-        return None
-
-    # Sort by threshold
-    cmd_entries.sort(key=lambda e: e["threshold"])
-
-    # Build the 1.21.4 item model definition
-    # Fallback is the base item model (from parent + textures)
-    textures = overrides_json.get("textures", {})
-    layer0 = textures.get("layer0", "")
-
-    # The fallback model references the base vanilla model
-    fallback = {"type": "model", "model": parent}
-
-    result = {
-        "model": {
-            "type": "range_dispatch",
-            "property": "custom_model_data",
-            "fallback": fallback,
-            "entries": cmd_entries
-        }
-    }
-
-    return result
-
-
-def build_special_model(item_name, overrides_json):
-    """Handle items with special predicates (bow pulling, shield blocking)."""
-    overrides = overrides_json.get("overrides", [])
-    parent = overrides_json.get("parent", "item/generated")
-
-    cmd_entries = []
-    has_special = False
-
-    for ov in overrides:
-        pred = ov.get("predicate", {})
-        model = ov.get("model", "")
-        if "custom_model_data" in pred and len(pred) == 1:
-            cmd_entries.append({
-                "threshold": pred["custom_model_data"],
-                "model": {"type": "model", "model": model}
-            })
-        elif len(pred) > 0:
-            has_special = True
 
     if not cmd_entries:
         return None
 
     cmd_entries.sort(key=lambda e: e["threshold"])
-
-    fallback = {"type": "model", "model": parent}
 
     return {
         "model": {
-            "type": "range_dispatch",
-            "property": "custom_model_data",
-            "fallback": fallback,
+            "type": "minecraft:range_dispatch",
+            "property": "minecraft:custom_model_data",
+            "scale": 1,
+            "fallback": {
+                "type": "minecraft:model",
+                "model": f"minecraft:item/{item_name}"
+            },
             "entries": cmd_entries
         }
     }
+
+
+# build_special_model merged into convert_overrides_to_items_model above
 
 
 def main():
@@ -212,7 +170,7 @@ def main():
         if "overrides" not in model_data:
             continue
 
-        items_model = build_special_model(item_name, model_data)
+        items_model = convert_overrides_to_items_model(item_name, model_data)
         if items_model is None:
             continue
 
