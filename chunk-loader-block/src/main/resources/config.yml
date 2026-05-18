@@ -1,0 +1,47 @@
+# Конфигурация ChunkLoaderBlock
+
+# Материал блока-прогружателя чанков. Должен быть валидным блоком в Minecraft 1.16.5
+loader-material: LODESTONE
+
+# Длина стороны квадрата чанков, которые удерживаются загруженными вокруг блока.
+chunk-size: 8
+
+# Отображаемое имя выдаваемого предмета. Поддерживает цветовые коды через '&'.
+display-name: "&bПрогружатель чанков &7[&a8x8&7]"
+
+# Описание (лор) выдаваемого предмета. Поддерживает цветовые коды через '&'.
+lore:
+  - "&7Удерживает область &b8x8 &7чанков"
+  - "&7вокруг этого блока постоянно загруженной."
+  - "&8Сломайте блок, чтобы освободить чанки."
+
+# Отправлять ли игроку сообщение при установке/разрушении блока.
+notify-player: true
+
+# Логировать ли действия (установка/разрушение/прогрузка) в консоль сервера.
+log-actions: true
+
+# Настройки визуальных эффектов вокруг активных прогружателей.
+particles:
+  enabled: true
+  type: END_ROD
+  count: 6
+  height: 1.5
+  offset: 0.25
+  speed: 0.02
+  interval-ticks: 10
+  show-borders: true
+  border-type: COMPOSTER
+  border-interval-ticks: 40
+  border-step: 8
+  player-radius: 96
+  burst-on-place: true
+  burst-on-break: true
+
+# Настройки звуковых эффектов.
+sounds:
+  enabled: true
+  on-place: BLOCK_BEACON_ACTIVATE
+  on-break: BLOCK_BEACON_DEACTIVATE
+  volume: 0.7
+  pitch: 1.2

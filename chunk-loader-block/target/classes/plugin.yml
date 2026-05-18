@@ -1,0 +1,27 @@
+name: ChunkLoaderBlock
+version: 1.1.0
+main: com.devin.chunkloader.ChunkLoaderPlugin
+api-version: 1.16
+author: maskalekseev-code
+description: Добавляет блок-прогружатель, удерживающий область 8x8 чанков загруженной.
+
+commands:
+  chunkloader:
+    description: Управление блоками-прогружателями чанков.
+    usage: |
+      /<command> give [игрок] - выдать предмет-прогружатель
+      /<command> list - список активных прогружателей
+      /<command> reload - перезагрузить конфиг и переприменить прогрузку
+    aliases: [cloader, cl]
+    permission: chunkloader.admin
+
+permissions:
+  chunkloader.admin:
+    description: Доступ к команде /chunkloader.
+    default: op
+  chunkloader.place:
+    description: Право устанавливать блок-прогружатель.
+    default: true
+  chunkloader.break:
+    description: Право ломать блок-прогружатель.
+    default: true
