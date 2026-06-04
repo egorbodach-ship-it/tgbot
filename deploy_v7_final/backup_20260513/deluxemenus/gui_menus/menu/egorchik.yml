@@ -1,0 +1,79 @@
+menu_title: "௓"
+open_command: podarok
+register_command: true
+permission: 'deluxemenus.menu.egorchik'
+permission_message: '&cУ вас нет прав на открытие этого меню!'
+open_commands:
+  - '[sound] ENTITY_VILLAGER_YES;1;1.5'
+size: 45
+update_interval: 10
+
+items:
+
+  # === АНИМАЦИЯ: ФАЗА 1 (оранжевое стекло) ===
+  frame_orange:
+    material: ORANGE_STAINED_GLASS_PANE
+    slots: [0,8,9,17,18,26,27,35,36,44]
+    display_name: ' '
+    priority: 1
+    view_requirement:
+      requirements:
+        tick_check:
+          type: string equals
+          input: '%deluxemenus_meta_animation_tick%'
+          output: '0'
+
+  # === АНИМАЦИЯ: ФАЗА 2 (белое стекло) ===
+  frame_white:
+    material: WHITE_STAINED_GLASS_PANE
+    slots: [0,8,9,17,18,26,27,35,36,44]
+    display_name: ' '
+    priority: 2
+
+  # === ЧЁРНОЕ ЗАПОЛНЕНИЕ ===
+  black:
+    material: BLACK_STAINED_GLASS_PANE
+    display_name: ' '
+    slots: [1,2,3,4,5,6,7,10,16,19,25,28,34,37,38,39,40,41,42,43]
+
+  # === КИТ: ФАЗА 1 (обычный сундук) ===
+  kit_phase1:
+    slot: 22
+    priority: 1
+    material: CHEST
+    display_name: '&#FF5700П&#FB5500о&#F75300л&#F35100у&#EF5000ч&#EB4E00и &#E74D00к&#E34B00и&#DF4900т'
+    lore:
+      - ''
+      - '&#FF5700┃ &fНажмите чтобы получить кит'
+      - '&#FF5700┃ &fНабор: &6morph'
+      - ''
+      - '&a▶ Нажмите для получения'
+    left_click_commands:
+      - '[console] kit give morph %player_name%'
+      - '[message] &aЕгорчик подогнал вам лут'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    view_requirement:
+      requirements:
+        tick_check:
+          type: string equals
+          input: '%deluxemenus_meta_animation_tick%'
+          output: '0'
+
+  # === КИТ: ФАЗА 2 (ловушка-сундук) ===
+  kit_phase2:
+    slot: 22
+    priority: 2
+    material: TRAPPED_CHEST
+    display_name: '&#FF5700П&#FB5500о&#F75300л&#F35100у&#EF5000ч&#EB4E00и &#E74D00к&#E34B00и&#DF4900т'
+    lore:
+      - ''
+      - '&#FF5700┃ &fНажмите чтобы получить кит'
+      - '&#FF5700┃ &fНабор: &6morph'
+      - ''
+      - '&e▶ Нажмите для получения'
+    left_click_commands:
+      - '[console] kit give morph %player_name%'
+      - '[message] &aЕгорчик подогнал вам лут'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'

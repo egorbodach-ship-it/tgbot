@@ -1,0 +1,442 @@
+menu_title: "௞"
+open_command:
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 44
+items:
+  'orange_glass':
+    display_name: '&r&r'
+    material: orange_stained_glass_pane
+    slots:
+      - 0
+      - 1
+      - 2
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 27
+      - 35
+      - 36
+      - 37
+      - 38
+      - 42
+      - 43
+      - 44
+
+  'black_glass':
+    display_name: '&r&r'
+    material: black_stained_glass_pane
+    slots:
+      - 3
+      - 4
+      - 5
+      - 10
+      - 11
+      - 15
+      - 16
+      - 18
+      - 26
+      - 28
+      - 29
+      - 33
+      - 34
+      - 39
+      - 41
+
+  'Firework_Rocket':
+    display_name: '&#FF5700&lФ&#FC5600&lе&#F95500&lй&#F65400&lе&#F35300&lр&#F05200&lв&#ED5100&lе&#EA5000&lр&#E74F00&lк'
+    slot: 5
+    material: Firework_Rocket
+    amount: 16
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&875 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 75
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 75'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570075 ₪'
+      - '[console] give %player_name% FireworkRocket 16'
+      - '[refresh]'
+
+  'golden_apple':
+    display_name: '&#FF5700&lЗ&#FD5600&lо&#FB5600&lл&#F95500&lо&#F85500&lт&#F65400&lо&#F45300&lе &#F05200&lя&#EE5100&lб&#ED5100&lл&#EB5000&lо&#E95000&lк&#E74F00&lо'
+    slot: 12
+    material: golden_apple
+    amount: 16
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&852 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 52
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 52'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570052 ₪'
+      - '[console] give %player_name% GoldApple 16'
+      - '[refresh]'
+
+  'totem':
+    display_name: '&#FF5700&lТ&#FD5600&lо&#FC5600&lт&#FA5500&lе&#F95500&lм &#F55400&lб&#F45300&lе&#F25300&lс&#F15200&lс&#EF5200&lм&#ED5100&lе&#EC5100&lр&#EA5000&lт&#E95000&lи&#E74F00&lя'
+    slot: 13
+    material: totem_of_undying
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&8155 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 155
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 155'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF5700155 ₪'
+      - '[console] give %player_name% Totem 1'
+      - '[refresh]'
+
+  'ender_pearl':
+    display_name: '&#FF5700&lЭ&#FD5600&lн&#FB5600&lд&#F85500&lе&#F65400&lр &#F25300&lЖ&#F05200&lе&#EE5100&lм&#EB5000&lч&#E95000&lу&#E74F00&lг'
+    slot: 14
+    material: ender_pearl
+    amount: 16
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&830 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 30
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 30'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570030 ₪'
+      - '[console] give %player_name% EnderPearl 16'
+      - '[refresh]'
+
+  'chorus_fruit':
+    display_name: '&#FF5700&lП&#FD5600&lл&#FA5500&lо&#F85500&lд &#F35300&lх&#F15200&lо&#EE5100&lр&#EC5100&lу&#E95000&lс&#E74F00&lа'
+    slot: 19
+    material: chorus_fruit
+    amount: 64
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&845 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 45
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 45'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570045 ₪'
+      - '[console] give %player_name% ChorusFruit 64'
+      - '[refresh]'
+
+  'exp_bottle':
+    display_name: '&#FF5700&lП&#FD5600&lу&#FB5600&lз&#F95500&lы&#F75400&lр&#F55400&lё&#F35300&lк &#EF5200&lо&#ED5100&lп&#EB5000&lы&#E95000&lт&#E74F00&lа'
+    slot: 20
+    material: experience_bottle
+    amount: 64
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&842 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 42
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 42'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570042 ₪'
+      - '[console] give %player_name% ExperienceBottle 64'
+      - '[refresh]'
+
+  'steak':
+    display_name: '&#FF5700&lС&#F95500&lт&#F35300&lе&#ED5100&lй&#E74F00&lк'
+    slot: 21
+    material: cooked_beef
+    amount: 64
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&820 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 20
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 20'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570020 ₪'
+      - '[console] give %player_name% CookedBeef 64'
+      - '[refresh]'
+
+  'shulker_box':
+    display_name: '&#FF5700&lШ&#FD5600&lа&#FC5600&lл&#FA5500&lк&#F85500&lе&#F65400&lр&#F55400&lо&#F35300&lв&#F15200&lы&#F05200&lй &#EC5100&lя&#EA5000&lщ&#E95000&lи&#E74F00&lк'
+    slot: 22
+    material: shulker_box
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&895 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 95
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 95'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570095 ₪'
+      - '[console] give %player_name% ShulkerBox 1'
+      - '[refresh]'
+
+  'cobweb':
+    display_name: '&#FF5700&lП&#FB5600&lа&#F75400&lу&#F35300&lт&#EF5200&lи&#EB5000&lн&#E74F00&lа'
+    slot: 23
+    material: cobweb
+    amount: 16
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&845 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570016 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 45
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 45'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570045 ₪'
+      - '[console] give %player_name% Cobweb 16'
+      - '[refresh]'
+
+  'gunpowder':
+    display_name: '&#FF5700&lП&#F95500&lо&#F35300&lр&#ED5100&lо&#E74F00&lх'
+    slot: 24
+    material: gunpowder
+    amount: 32
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&8145 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570032 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 145
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 145'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF5700145 ₪'
+      - '[console] give %player_name% Gunpowder 32'
+      - '[refresh]'
+
+  'oak_log':
+    display_name: '&#FF5700&lД&#FD5600&lу&#FB5600&lб&#F95500&lо&#F85500&lв&#F65400&lо&#F45300&lе &#F05200&lб&#EE5100&lр&#ED5100&lе&#EB5000&lв&#E95000&lн&#E74F00&lо'
+    slot: 25
+    material: oak_log
+    amount: 64
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&820 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF570064 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 20
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 20'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570020 ₪'
+      - '[console] give %player_name% Oaklog 64'
+      - '[refresh]'
+
+  'shield':
+    display_name: '&#FF5700&lЩ&#F35300&lи&#E74F00&lт'
+    slot: 30
+    material: shield
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&850 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 50
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 50'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570050 ₪'
+      - '[console] give %player_name% Shield 1'
+      - '[refresh]'
+
+  'arrow':
+    display_name: '&#FF5700&lС&#FA5500&lт&#F55400&lр&#F15200&lе&#EC5100&lл&#E74F00&lа'
+    slot: 31
+    material: arrow
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&835 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 35
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 35'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570035 ₪'
+      - '[console] give %player_name% Arrow 1'
+      - '[refresh]'
+
+  'ender_chest':
+    display_name: '&#FF5700&lЭ&#FD5600&lн&#FB5600&lд&#F85500&lе&#F65400&lр&#F45300&l-&#F25300&lс&#F05200&lу&#EE5100&lн&#EB5000&lд&#E95000&lу&#E74F00&lк'
+    slot: 32
+    material: ender_chest
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&870 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 70
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 70'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF570070 ₪'
+      - '[console] give %player_name% Enderchest 1'
+      - '[refresh]'
+
+  'elytra':
+    display_name: '&x&F&F&0&0&0&0&lЭ&x&E&A&0&5&0&3&lл&x&D&4&0&B&0&7&lи&x&B&F&1&0&0&A&lт&x&A&9&1&6&0&E&lр&x&9&4&1&B&1&1&lы'
+    slot: 3
+    material: elytra
+    lore:
+      - '&r'
+      - '&r &#FF5700▲ &r&#aaaaaaЦена: &x&0&8&F&B&9&8450 ₪&r'
+      - '&r &#FF5700◆ &r&#aaaaaaКол-во: &#FF57001 шт.&r'
+      - '&r &#FF5700▼ &r&#aaaaaaБаланс: &x&0&8&F&B&9&8%playerpoints_points_formatted% ₪&r'
+      - '&r'
+      - '&aНажмите, чтобы приобрести&r'
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 450
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 450'
+      - '[message] &7&l[&#FF5700&l₪&7&l] &8> &7С вашего баланса списано: &#FF5700450 ₪'
+      - '[console] give %player_name% Elytra 1'
+      - '[refresh]'
+
+  'back_button':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateRESMENU'
+    right_click_commands:
+      - '[openguimenu] donateRESMENU'

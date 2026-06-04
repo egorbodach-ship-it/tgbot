@@ -1,0 +1,857 @@
+#--------------------------------------------
+# Обновленная менюшка для bladecube.fun
+# Идеальный баланс, фикс автокликеров и времени
+#--------------------------------------------
+menu_title: "௑"
+open_command: free
+register_command: true
+size: 54
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+
+items:
+  # ===========================
+  # РАМКА И ДЕКОР
+  # ===========================
+  'black_glass':
+    material: black_stained_glass_pane
+    display_name: '&f'
+    slots:
+    - 0
+    - 1
+    - 7
+    - 8
+    - 9
+    - 17
+    - 36
+    - 44
+    - 45
+    - 46
+    - 52
+    - 53
+  'orange_glass':
+    material: orange_stained_glass_pane
+    display_name: '&f'
+    slots:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 18
+    - 27
+    - 26
+    - 35
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+
+  # ===========================
+  # ЗАГОЛОВОК
+  # ===========================
+  'header':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQxNjY2M2JjYjY1NzE0YmI3YzE0NjI1YzQ5ZjM3MzY5M2Q3YjA0MmI3ZGQ4ZTM3M2E4YzE1MmQ0YjY3ZGYxIn19fQ==
+    display_name: '&#FF5700&lБЕСПЛАТНЫЙ ДОНАТ'
+    slot: 13
+    lore:
+    - ''
+    - '&#FF5700Отыгрывай время на сервере'
+    - '&#FF5700и получай крутые награды!'
+    - ''
+    - '&7Твое время: &f%statistic_minutes_played% &7мин.'
+
+  # ===========================
+  # НАГРАДА 1 (20 минут)
+  # ===========================
+  '1_claimed':
+    slot: 20
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №1'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF5700500 $'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.1.yes'
+
+  '1_available':
+    slot: 20
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVhMjI5ZDQyOGNmOWVmNWJjZjhjOTM1NTViMzg1MjgyYTJjZjZhZGI3YTUzMjc5ODk4MmMxNGU5YWU2MjYxIn19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №1'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF570020 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF570020'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF5700500 $'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '20'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.1.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF570020 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.1.yes'
+      - '[console] eco give %player_name% 500'
+      - '[console] tccr give donate_free %player_name% 1 1'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  # ===========================
+  # НАГРАДА 2 (40 минут)
+  # ===========================
+  '2_claimed':
+    slot: 21
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №2'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57002 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Евро кейс &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.2.yes'
+
+  '2_available':
+    slot: 21
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVhMjI5ZDQyOGNmOWVmNWJjZjhjOTM1NTViMzg1MjgyYTJjZjZhZGI3YTUzMjc5ODk4MmMxNGU5YWU2MjYxIn19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №2'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF570040 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF570040'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57002 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Евро кейс &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.1.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '40'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.2.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF570040 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.2.yes'
+      - '[console] p give %player_name% 2'
+      - '[console] eco give %player_name% 1000'
+      - '[console] tccr give donate_free %player_name% 1 1'
+      - '[console] tccr give rubles %player_name% 1'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '2_locked':
+    slot: 21
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 3 (90 минут)
+  # ===========================
+  '3_claimed':
+    slot: 22
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №3'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57002 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.3.yes'
+
+  '3_available':
+    slot: 22
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVhMjI5ZDQyOGNmOWVmNWJjZjhjOTM1NTViMzg1MjgyYTJjZjZhZGI3YTUzMjc5ODk4MmMxNGU5YWU2MjYxIn19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №3'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF570090 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF570090'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57002 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.2.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '90'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.3.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF570090 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.3.yes'
+      - '[console] tccr give donate_free %player_name% 1 1'
+      - '[console] p give %player_name% 2'
+      - '[console] eco give %player_name% 1500'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '3_locked':
+    slot: 22
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 4 (180 минут)
+  # ===========================
+  '4_claimed':
+    slot: 23
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №4'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001800 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57003 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Евро кейс &#FF5700(x2)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.4.yes'
+
+  '4_available':
+    slot: 23
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVhMjI5ZDQyOGNmOWVmNWJjZjhjOTM1NTViMzg1MjgyYTJjZjZhZGI3YTUzMjc5ODk4MmMxNGU5YWU2MjYxIn19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №4'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF5700180 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF5700180'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57001800 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57003 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Евро кейс &#FF5700(x2)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.3.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '180'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.4.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF5700180 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.4.yes'
+      - '[console] tccr give donate_free %player_name% 1 1'
+      - '[console] tccr give rubles %player_name% 2'
+      - '[console] p give %player_name% 3'
+      - '[console] eco give %player_name% 1800'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '4_locked':
+    slot: 23
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 5 (300 минут)
+  # ===========================
+  '5_claimed':
+    slot: 24
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №5'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57002300 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57003 €'
+    - ' &#FF5700⛄ &7« &x&0&8&C&0&F&BШар Нептуна &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.5.yes'
+
+  '5_available':
+    slot: 24
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM4NTVlNjM4NDE3Yjg2N2YwMjhhOTI0N2FmOWUwOGI3N2MzNTJlNTc2NjM2MzQwZjg2Yjc4OTAzYjgyMzhlZiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №5'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF5700300 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF5700300'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57002300 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57003 €'
+    - ' &#FF5700⛄ &7« &x&0&8&C&0&F&BШар Нептуна &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.4.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '300'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.5.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF5700300 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.5.yes'
+      - '[console] p give %player_name% 3'
+      - '[console] eco give %player_name% 2300'
+      - '[console] customitems give %player_name% neptuna 1'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '5_locked':
+    slot: 24
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 6 (480 минут)
+  # ===========================
+  '6_claimed':
+    slot: 29
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №6'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57002900 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57004 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x3)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.6.yes'
+
+  '6_available':
+    slot: 29
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM4NTVlNjM4NDE3Yjg2N2YwMjhhOTI0N2FmOWUwOGI3N2MzNTJlNTc2NjM2MzQwZjg2Yjc4OTAzYjgyMzhlZiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №6'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF5700480 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF5700480'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57002900 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57004 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x3)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.5.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '480'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.6.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF5700480 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.6.yes'
+      - '[console] p give %player_name% 4'
+      - '[console] tccr give donate_free %player_name% 1 3'
+      - '[console] eco give %player_name% 2900'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '6_locked':
+    slot: 29
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 7 (600 минут)
+  # ===========================
+  '7_claimed':
+    slot: 30
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №7'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57003000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF570025 €'
+    - ' &#FF5700⛄ &fКит Шейд (Shade) &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x3)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.7.yes'
+
+  '7_available':
+    slot: 30
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM4NTVlNjM4NDE3Yjg2N2YwMjhhOTI0N2FmOWUwOGI3N2MzNTJlNTc2NjM2MzQwZjg2Yjc4OTAzYjgyMzhlZiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №7'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF5700600 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF5700600'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57003000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF570025 €'
+    - ' &#FF5700⛄ &fКит Nebula &#FF5700(x1)'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x3)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.6.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '600'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.7.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF5700600 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.7.yes'
+      - '[console] p give %player_name% 25'
+      - '[console] tccr give donate_free %player_name% 1 3'
+      - '[console] eco give %player_name% 3000'
+      - '[console] kit give nebula %player_name%'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '7_locked':
+    slot: 30
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 8 (900 минут)
+  # ===========================
+  '8_claimed':
+    slot: 31
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №8'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57003500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57005 €'
+    - ' &#FF5700⛄ &7« &x&5&8&F&F&0&3Шар Хамелеона &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.8.yes'
+
+  '8_available':
+    slot: 31
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM4NTVlNjM4NDE3Yjg2N2YwMjhhOTI0N2FmOWUwOGI3N2MzNTJlNTc2NjM2MzQwZjg2Yjc4OTAzYjgyMzhlZiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №8'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF5700900 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF5700900'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57003500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57005 €'
+    - ' &#FF5700⛄ &7« &x&5&8&F&F&0&3Шар Хамелеона &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.7.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '900'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.8.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF5700900 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.8.yes'
+      - '[console] p give %player_name% 5'
+      - '[console] customitems give %player_name% xameleon 1'
+      - '[console] eco give %player_name% 3500'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '8_locked':
+    slot: 31
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 9 (1800 минут)
+  # ===========================
+  '9_claimed':
+    slot: 32
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №9'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57004500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57006 €'
+    - ' &#FF5700⛄ &7« &x&F&B&5&4&0&DЛивалка &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.9.yes'
+
+  '9_available':
+    slot: 32
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjYxZjFkMDU5ZDBmMzQ0Y2JhODVmOWRkNzYxYmI4MDBmMzQ2NTQ4NzEzNmQwYzAzZTY1M2UxYjNlNGI2In19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №9'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF57001800 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF57001800'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57004500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57006 €'
+    - ' &#FF5700⛄ &7« &x&F&B&5&4&0&DЛивалка &7» &#FF5700(x1)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.8.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '1800'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.9.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF57001800 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.9.yes'
+      - '[console] p give %player_name% 6'
+      - '[console] giveci %player_name% ливалка 1'
+      - '[console] eco give %player_name% 4500'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '9_locked':
+    slot: 32
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 10 (2500 минут)
+  # ===========================
+  '10_claimed':
+    slot: 33
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №10'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fВыполняйте следующие &#FF5700награды'
+    - ' &#FF5700⛄ &fи &#FF5700получите &fбольше наград!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57005000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57007 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x5)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.10.yes'
+
+  '10_available':
+    slot: 33
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjYxZjFkMDU5ZDBmMzQ0Y2JhODVmOWRkNzYxYmI4MDBmMzQ2NTQ4NzEzNmQwYzAzZTY1M2UxYjNlNGI2In19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №10'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF57002500 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF57002500'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57005000 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57007 €'
+    - ' &#FF5700⛄ &fБесплатный Кейс &#FF5700(x5)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.9.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '2500'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.10.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF57002500 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.10.yes'
+      - '[console] p give %player_name% 7'
+      - '[console] eco give %player_name% 5000'
+      - '[console] tccr give donate_free %player_name% 1 5'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '10_locked':
+    slot: 33
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'
+
+  # ===========================
+  # НАГРАДА 11 (3000 минут) - ЦЕНТР НИЗ
+  # ===========================
+  '11_claimed':
+    slot: 40
+    priority: 1
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc5YTVjOTVlZTE3YWJmZWY0NWM4ZGMyMjQxODk5NjQ5NDRkNTYwZjE5YTQ0ZjE5ZjhhNDZhZWYzZmVlNDc1NiJ9fX0=
+    display_name: ' &#FF5700[✸] &fНаграда №11 (ФИНАЛ)'
+    lore:
+    - ' &#FF5700⛄ &fВы &#FF5700успешно &fполучили награду!'
+    - ' &#FF5700⛄ &fПоздравляем с прохождением!'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57005500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57007 €'
+    - ' &#FF5700⛄ &fПлатный Донат кейс &#FF5700(x2)'
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'free.11.yes'
+
+  '11_available':
+    slot: 40
+    priority: 2
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjYxZjFkMDU5ZDBmMzQ0Y2JhODVmOWRkNzYxYmI4MDBmMzQ2NTQ4NzEzNmQwYzAzZTY1M2UxYjNlNGI2In19fQ==
+    display_name: ' &#FF5700[✸] &fНаграда №11 (ФИНАЛ)'
+    lore:
+    - ' &#FF5700⛄ &fДля получение награды'
+    - ' &#FF5700⛄ &fВы должны отыграть: &#FF57003000 минут'
+    - ' &#FF5700⛄ &fПрогресс: &f%statistic_minutes_played%&8/&#FF57003000'
+    - ''
+    - ' &#FF5700[✸] &fНаграда'
+    - ' &#FF5700⛄ &fМонеток: &#FF57005500 $'
+    - ' &#FF5700⛄ &fЕвро: &#FF57007 €'
+    - ' &#FF5700⛄ &fПлатный Донат кейс &#FF5700(x2)'
+    view_requirement:
+      requirements:
+        prev:
+          type: has permission
+          permission: 'free.10.yes'
+    left_click_requirement:
+      requirements:
+        time:
+          type: '>='
+          input: '%statistic_minutes_played%'
+          output: '3000'
+        not_claimed:
+          type: '!has permission'
+          permission: 'free.11.yes'
+      deny_commands:
+        - '[sound] block_note_block_hat'
+        - '[message] &#FF5700[✸] &fНедостаточно &#FF5700отыграли!'
+        - '[message] &#FF5700[✸] &fНужно&f: &#FF57003000 &fминут отыграть'
+    left_click_commands:
+      - '[close]'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[console] lp user %player_name% permission set free.11.yes'
+      - '[console] p give %player_name% 7'
+      - '[console] eco give %player_name% 5500'
+      - '[console] tccr give donate %player_name% 2'
+      - '[message] &#FF5700[✸] &fВы &#FF5700успешно &fвыполнили задание!'
+
+  '11_locked':
+    slot: 40
+    priority: 3
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+    display_name: '&#D81856[✸] &fНет Доступа!'
+    lore:
+    - '&#FF5A5A⛄ &fДля получение данной награды'
+    - '&#FF5A5A⛄ &fВы должны получить предыдущие награды!'

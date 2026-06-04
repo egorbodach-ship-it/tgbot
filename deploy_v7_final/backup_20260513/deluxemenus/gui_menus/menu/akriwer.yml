@@ -1,0 +1,16 @@
+menu_title: "௔"
+open_command: akriwer
+register_command: true
+open_commands:
+  - '[console] execute at %player_name% run playsound minecraft:block.barrel.open master %player_name% ~ ~ ~ 1 1'
+  - '[console] execute at %player_name% run playsound minecraft:block.stone.place master %player_name% ~ ~ ~ 1 1.2<delay=2>'
+  - '[console] dm open akriwer1 %player_name%<delay=2>'
+size: 45
+
+items:
+
+  # === СТАДИЯ 1: ТОЛЬКО УГЛЫ ===
+  corner:
+    material: orange_stained_glass_pane
+    display_name: '&r&r'
+    slots: [0, 8, 36, 44]

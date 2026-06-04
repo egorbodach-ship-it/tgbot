@@ -1,0 +1,14 @@
+menu_title: "௔"
+open_commands:
+  - '[console] execute at %player_name% run playsound minecraft:block.stone.place master %player_name% ~ ~ ~ 1 1.4'
+  - '[console] execute at %player_name% run playsound minecraft:block.stone.place master %player_name% ~ ~ ~ 1 1.6<delay=2>'
+  - '[console] dm open akriwer2 %player_name%<delay=2>'
+size: 45
+
+items:
+
+  # === СТАДИЯ 2: ВЕРХ + НИЗ ===
+  top_bottom:
+    material: orange_stained_glass_pane
+    display_name: '&r&r'
+    slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 36, 37, 38, 39, 40, 41, 42, 43, 44]

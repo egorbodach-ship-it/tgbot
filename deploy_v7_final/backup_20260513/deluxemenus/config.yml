@@ -1,0 +1,79 @@
+# DeluxeMenus 1.14.1-Release main configuration file
+# 
+# A full wiki on how to use this plugin can be found at:
+# https://wiki.helpch.at/helpchat-plugins/deluxemenus
+
+metas_list_page_size: 15
+use_admin_commands_in_menus_list: false
+menus_list_page_size: 10
+debug: HIGHEST
+check_updates: false
+gui_menus:
+  donate:
+    file: menu/donate.yml
+  help:
+    file: menu/help.yml
+  panel:
+    file: menu/panel.yml
+  menu:
+    file: menu/menu.yml
+  grab:
+    file: menu/grab.yml
+  freek:
+    file: menu/freek.yml
+  media:
+    file: menu/media.yml
+  obmen:
+    file: menu/obmen.yml
+  donateSHARI:
+    file: shop/donateSHARI.yml
+  donateARROW:
+    file: shop/donateARROW.yml
+  donatePOTIONS:
+    file: shop/donatePOTIONS.yml
+  donateRESMENU:
+    file: shop/donateRESMENU.yml
+  donateRESEURO:
+    file: shop/donateRESEURO.yml
+  donateRESMONETA:
+    file: shop/donateRESMONETA.yml
+  donateSHOP:
+    file: shop/donateSHOP.yml
+  donateEGG:
+    file: shop/donateEGG.yml
+  donateITEMS2:
+    file: shop/donateITEMS2.yml
+  donateSPAWNERS:
+    file: shop/donateSPAWNERS.yml
+  donateLIVALKA:
+    file: shop/donateLIVALKA.yml
+  donatePRED:
+    file: shop/donatePRED.yml
+  rtp:
+    file: menu/rtp.yml
+  arenda:
+    file: menu/arenda.yml
+  TitleAnime:
+    file: Titles/TitleAnime.yml
+  TitleExclusive:
+    file: Titles/TitleExclusive.yml
+  TitleMemes:
+    file: Titles/TitleMemes.yml
+  TitleMenu:
+    file: Titles/TitleMenu.yml
+  event:
+    file: menu/events.yml
+  egorchik:
+    file: menu/egorchik.yml
+  portals:
+    file: menu/portals.yml
+  akriwer:
+    file: menu/akriwer.yml
+  akriwer1:
+    file: menu/akriwer1.yml
+  akriwer2:
+    file: menu/akriwer2.yml
+  donatePVE:
+    file: shop/donatePVE.yml
+  donatePVEOTHER:
+    file: shop/donatePVEOTHER.yml

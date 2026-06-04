@@ -1,0 +1,380 @@
+menu_title: '&8&l> &0Маски &7| &0/masks'
+open_command:
+  - masks
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 54
+
+items:
+  'orange':
+    material: orange_stained_glass_pane
+    display_name: '&r'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slots:
+      - 0
+      - 1
+      - 2
+      - 6
+      - 7
+      - 8
+      - 45
+      - 46
+      - 47
+      - 51
+      - 52
+      - 53
+
+  'black':
+    material: black_stained_glass_pane
+    display_name: '&r'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slots:
+      - 3
+      - 4
+      - 5
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 35
+      - 36
+      - 44
+      - 48
+      - 50
+
+  'gray':
+    material: gray_stained_glass_pane
+    display_name: '&r'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    slots:
+      - 10
+      - 16
+      - 19
+      - 25
+      - 28
+      - 34
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+
+  'crocodile':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJlN2ZhMmY5YjhkNmQxZTczNGVkYTVlM2NlMDI2Njg4MTM0MjkyZmNhZmMzMjViMWVhZDQzZDg5Y2MxZTEifX19
+    slot: 12
+    display_name: '&7« &2&lМаска Крокодила &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&2&n▌&f &fДревний крокодил смотрит'
+      - '&2▌ &fна мир твоими глазами...'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&2&n▌&f &fСкорость &2II'
+      - '&2&n▌&f &fВодное дыхание &2I'
+      - '&2▌&f &fСила &2I'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fМедл. добыча &cI'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8200 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '200'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '200'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 200'
+      - '[console] solomonmask:mask give %player_name% crocodile'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &2&lМаску Крокодила'
+    right_click_commands:
+      - '[console] p take %player_name% 200'
+      - '[console] solomonmask:mask give %player_name% crocodile'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &2&lМаску Крокодила'
+
+  'evil_bottle':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzBiYWE5MjE4Zjc4Yjc4ZDczZWJmODcyMTdjMDQyYmY0M2QzNGRiYTNkNGM0Y2NmMWQzM2Y2MTI0NTYxMTVmMCJ9fX0=
+    slot: 13
+    display_name: '&7« &5&lЗловещая Бутылка &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&5&n▌&f &fПроклятое зелье из глубин'
+      - '&5▌ &fтёмного мира...'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&5&n▌&f &fСкорость &5I'
+      - '&5&n▌&f &fРегенерация &5I'
+      - '&5▌&f &fСила &5I'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fНету'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8150 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '150'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '150'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 150'
+      - '[console] solomonmask:mask give %player_name% evil_bottle'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &5&lЗловещую Бутылку'
+    right_click_commands:
+      - '[console] p take %player_name% 150'
+      - '[console] solomonmask:mask give %player_name% evil_bottle'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &5&lЗловещую Бутылку'
+
+  'berserker':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmYyZjk4ODVhY2Q1NmJiZjU2MTFkNjAyNzMzNzYyN2RhNTBlOGU3YWRiMzA0NzM0N2VjYTE1MTk0ZjhlOWUwZCJ9fX0=
+    slot: 14
+    display_name: '&7« &c&lМаска Берсерка &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&c&n▌&f &fДревний воин надел эту маску'
+      - '&c▌ &fперед последней битвой...'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&c&n▌&f &fСила &cIII'
+      - '&c▌&f &fСопротивление &cI'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fЗамедление &cII'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8450 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '450'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '450'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 450'
+      - '[console] solomonmask:mask give %player_name% berserker'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &c&lМаску Берсерка'
+    right_click_commands:
+      - '[console] p take %player_name% 450'
+      - '[console] solomonmask:mask give %player_name% berserker'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &c&lМаску Берсерка'
+
+  'demon':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzViNThmMjY2NTQ5ZDNiZjE4Mjg1MTNlZTJiNTE0NzZmMmU4N2IwYjRhOTRjNjVhZWI4ZGUxOWU4MTllNDU1YiJ9fX0=
+    slot: 21
+    display_name: '&7« &4&lМаска Демона &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&4&n▌&f &fИз глубин преисподней'
+      - '&4▌ &fявился древний демон...'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&4&n▌&f &fСила &4II'
+      - '&4&n▌&f &fОгнестойкость &4I'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fНету'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8400 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '400'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '400'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 400'
+      - '[console] solomonmask:mask give %player_name% demon'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &4&lМаску Демона'
+    right_click_commands:
+      - '[console] p take %player_name% 400'
+      - '[console] solomonmask:mask give %player_name% demon'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &4&lМаску Демона'
+
+  'garfield':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJjMWE4M2VjYTM3MjQ5YTI4ZTQyN2M1NDE1NTZlNzhkNDBiOTI4ZWE5ZTE1NjlkNGU2ZDVmYWM4NDQ4ODgifX19
+    slot: 22
+    display_name: '&7« &6&lМаска Гарфилда &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&6&n▌&f &fЯ ненавижу понедельники...'
+      - '&6▌ &fЗато обожаю лазанью и сон!'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&6&n▌&f &fСила &6III'
+      - '&6&n▌&f &fСопротивление &6II'
+      - '&6&n▌&f &fСкорость &6II'
+      - '&6&n▌&f &fОгнестойкость &6I'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fНету'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8700 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '700'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '700'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 700'
+      - '[console] solomonmask:mask give %player_name% garfield'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &6&lМаску Гарфилда'
+    right_click_commands:
+      - '[console] p take %player_name% 700'
+      - '[console] solomonmask:mask give %player_name% garfield'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &6&lМаску Гарфилда'
+
+  'scream':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZjYzM3YjZjNWYxYWE1MWU5YzljOTYwMjNiNDJhM2NiOGI3MDg0N2MwNDE0OGUxMzViYjg4MTk3ZTBiMjRjYyJ9fX0=
+    slot: 23
+    display_name: '&7« &f&lМаска Крика &7»'
+    enchantments:
+      - KNOCKBACK;1
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r'
+      - '&f&n▌&7 &fGhostface смотрит на тебя...'
+      - '&f▌ &7Ты следующий в его списке!'
+      - '&r'
+      - '&a&l⚡ &fБаффы:'
+      - '&f&n▌&f &fСкорость &fIII'
+      - '&f&n▌&f &fСила &fII'
+      - '&f▌&f &fОгнестойкость &fI'
+      - '&r'
+      - '&c&l☠ &fДебаффы:'
+      - '&c▌&f &fНету'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&8450 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '450'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '450'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 450'
+      - '[console] solomonmask:mask give %player_name% scream'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &f&lМаску Крика'
+    right_click_commands:
+      - '[console] p take %player_name% 450'
+      - '[console] solomonmask:mask give %player_name% scream'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили &f&lМаску Крика'
+
+  'back':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 49
+    material: spectral_arrow
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'

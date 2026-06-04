@@ -1,0 +1,158 @@
+menu_title: "௕"
+open_command: 
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 44
+items:
+  'СтрелаВоробья':
+    display_name: '§x§F§F§F§F§F§F§lС§x§F§2§F§2§F§2§lт§x§E§4§E§5§E§4§lр§x§D§7§D§8§D§7§lе§x§C§A§C§C§C§A§lл§x§B§C§B§F§B§C§lа §x§A§2§A§5§A§2§lВ§x§9§5§9§8§9§5§lо§x§8§7§8§B§8§7§lр§x§7§A§7§F§7§A§lо§x§6§D§7§2§6§D§lб§x§5§F§6§5§5§F§lь§x§5§2§5§8§5§2§lя'
+    lore:
+      - '&r'
+      - ' §x§F§F§F§F§F§F§l▎&r §7Левитация &7(§x§F§F§F§F§F§F00:05&7)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&835 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    nbt_int: CustomPotionColor:255255255
+    material: tipped_arrow
+    amount: 16
+    slot: 21
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 35
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 35'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] givearrow %player_name% СтрелаВоробья 16'
+      - '[refresh]'
+
+  'СтрелаФантома':
+    display_name: '§x§6§8§0§2§F§F§lС§x§6§7§0§5§F§6§lт§x§6§5§0§7§E§D§lр§x§6§4§0§A§E§4§lе§x§6§2§0§C§D§A§lл§x§6§1§0§F§D§1§lа §x§5§E§1§4§B§F§lФ§x§5§D§1§6§B§6§lа§x§5§C§1§9§A§D§lн§x§5§A§1§B§A§3§lт§x§5§9§1§E§9§A§lо§x§5§7§2§0§9§1§lм§x§5§6§2§3§8§8§lа'
+    lore:
+      - '&r'
+      - ' §x§6§8§0§2§F§F§l▎&r §7Тошнота III &7(§x§6§8§0§2§F§F00:20&7)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&845 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: tipped_arrow
+    amount: 16
+    slot: 22
+    nbt_int: CustomPotionColor:1091250
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 45
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 45'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] givearrow %player_name% СтрелаФантома 16'
+      - '[refresh]'
+
+  'СтрелаСмерти':
+    display_name: '§x§E§D§1§C§1§C§lС§x§E§9§2§4§2§4§lт§x§E§5§2§C§2§C§lр§x§E§0§3§3§3§3§lе§x§D§C§3§B§3§B§lл§x§D§8§4§3§4§3§lа §x§C§F§5§2§5§2§lС§x§C§B§5§A§5§A§lм§x§C§7§6§2§6§2§lе§x§C§3§6§A§6§A§lр§x§B§E§7§1§7§1§lт§x§B§A§7§9§7§9§lи'
+    lore:
+      - '&r'
+      - ' §x§E§D§1§C§1§C§l▎&r §7Голод X &7(§x§E§D§1§C§1§C00:05&7)'
+      - ' §x§E§D§1§C§1§C§l▎&r §7Слепота X &7(§x§E§D§1§C§1§C00:05&7)'
+      - ' §x§E§D§1§C§1§C§l▎&r §7Утомление X &7(§x§E§D§1§C§1§C00:05&7)'
+      - ' §x§E§D§1§C§1§C§l▎&r §7Иссушение X &7(§x§E§D§1§C§1§C00:05&7)'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &x&0&8&F&B&9&899 ₪'
+      - ''
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    material: tipped_arrow
+    amount: 16
+    slot: 23
+    nbt_int: CustomPotionColor:255111
+    enchantments:
+      - 'knockback;1'
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+      - HIDE_POTION_EFFECTS
+    left_click_requirement:
+      requirements:
+        Money:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: 99
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] points take %player_name% 99'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+      - '[console] givearrow %player_name% СтрелаСмерти 16'
+      - '[refresh]'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+
+  'white':
+    material: orange_stained_glass_pane
+    display_name: ''
+    slots:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 18
+      - 17
+      - 26
+      - 35
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 44
+
+  'black':
+    material: black_stained_glass_pane
+    display_name: ''
+    slots:
+      - 0
+      - 1
+      - 9
+      - 36
+      - 44
+      - 7
+      - 8
+      - 17
+      - 27
+      - 37
+      - 43
+      - 35
