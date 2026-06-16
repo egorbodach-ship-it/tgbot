@@ -1,0 +1,481 @@
+menu_title: "௟"
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 45
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 31
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+      - 44
+  furnace:
+    material: furnace
+    slot: 20
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Скоростная печка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Скоростная печка плавит'
+      - ' &#FF5700┃&r &7В 2 раза быстрее'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a1274 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1274'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1274'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 1274'
+      - '[console] whitecustomfurnaces give %player_name% cooktime_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 1274'
+      - '[console] whitecustomfurnaces give %player_name% cooktime_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  furnace2:
+    material: furnace
+    slot: 21
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Умножающая печка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Умножающая печка удваивает'
+      - ' &#FF5700┃&r &7Ресурсы в 2 раза'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a1649 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1649'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1649'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 1649'
+      - '[console] whitecustomfurnaces give %player_name% doubleFurnace 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 1649'
+      - '[console] whitecustomfurnaces give %player_name% doubleFurnace 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  furnace3:
+    material: furnace
+    slot: 22
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Топливная печка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Топливная печка употребляет'
+      - ' &#FF5700┃&r &7В 2 раза меньше топлива'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a2014 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2014'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2014'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 2014'
+      - '[console] whitecustomfurnaces give %player_name% smeltFurnace 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 2014'
+      - '[console] whitecustomfurnaces give %player_name% smeltFurnace 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  furnace4:
+    material: furnace
+    slot: 23
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Супер печка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Супер печка плавит в 2'
+      - ' &#FF5700┃&r &7Раза быстрее и при этом,'
+      - ' &#FF5700┃&r &7Употребляет в 2 раза меньше топлива'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a3024 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '3024'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '3024'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 3024'
+      - '[console] whitecustomfurnaces give %player_name% enchant_all_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 3024'
+      - '[console] whitecustomfurnaces give %player_name% enchant_all_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  furnace5:
+    material: furnace
+    slot: 24
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Ультра печка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Ультра печка плавит в 2'
+      - ' &#FF5700┃&r &7Раза быстрее и при этом,'
+      - ' &#FF5700┃&r &7Употребляет в 2 раза меньше топлива'
+      - ' &#FF5700┃&r &7И так-же печка удваивает ресурсы'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a4274 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '4274'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '4274'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 4274'
+      - '[console] whitecustomfurnaces give %player_name% enchant_all_x3 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 4274'
+      - '[console] whitecustomfurnaces give %player_name% enchant_all_x3 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  bw1:
+    material: Brewing_Stand
+    slot: 12
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Топливная зельварка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Топливная зельварка употребляет'
+      - ' &#FF5700┃&r &7В 2 раза меньше ингредиентов'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a898 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '898'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '898'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 898'
+      - '[console] whitecustombrewers give %player_name% fuelBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 898'
+      - '[console] whitecustombrewers give %player_name% fuelBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  bw2:
+    material: Brewing_Stand
+    slot: 13
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Везучая зельварка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Везучая зельварка может с'
+      - ' &#FF5700┃&r &7Шансом 50% не потратить ингредиенты'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a1349 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1349'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1349'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 1349'
+      - '[console] whitecustombrewers give %player_name% luckyBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 1349'
+      - '[console] whitecustombrewers give %player_name% luckyBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  bw3:
+    material: Brewing_Stand
+    slot: 14
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Супер зельварка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Супер зельварка употребляет'
+      - ' &#FF5700┃&r &7В 3 раза меньше топлива, и с'
+      - ' &#FF5700┃&r &7Шансом 35% сохранят ингредиент'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a2014 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2014'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2014'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 2014'
+      - '[console] whitecustombrewers give %player_name% superBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 2014'
+      - '[console] whitecustombrewers give %player_name% superBrewingStand 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  hp1:
+    material: Hopper
+    slot: 30
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Скоростная Воронка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Раз в 1 секунду отправляет до 3 предметов'
+      - ' &#FF5700┃&r &7Раз в 3 секунды получаете до 10 предметов'
+      - ' &#FF5700┃&r &7Также она с 35% шансом теряет до 1 предмета'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a1250 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1250'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1250'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 1250'
+      - '[console] whitecustomhoppers give %player_name% cooktime_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 1250'
+      - '[console] whitecustomhoppers give %player_name% cooktime_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  hp2:
+    material: Hopper
+    slot: 32
+    item_flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+    enchantments:
+      - DURABILITY;3
+    display_name: '&#FF5700Супер Воронка'
+    lore:
+      - ''
+      - ' &#FF5700┃&r &7Раз в 0.5 секунды отправляет до 6 предметов'
+      - ' &#FF5700┃&r &7Раз в 6 секунд получаете до 20 предметов'
+      - ' &#FF5700┃&r &7Также она с 35% шансом теряет до 1 предмета'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fСтоимость: &a2429 ₪'
+      - '&r'
+      - '&x&F&B&5&4&0&D▶ &fНажмите, чтобы &aкупить'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2429'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '2429'
+      deny_commands:
+        - '[message] &x&F&B&5&4&0&D&l▶ &fУ вас &cнедостаточно &fкрон'
+    left_click_commands:
+      - '[console] p take %player_name% 2429'
+      - '[console] whitecustomhoppers give %player_name% enchant_all_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+    right_click_commands:
+      - '[console] p take %player_name% 2429'
+      - '[console] whitecustomhoppers give %player_name% enchant_all_x2 1'
+      - '[message] &x&F&B&5&4&0&D&l▶ &fВы &aуспешно &fкупили предмет'
+
+  'НАЗАД':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
+

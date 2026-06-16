@@ -1,0 +1,81 @@
+menu_title: "௢"
+open_command:
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+size: 45
+items:
+  'gui_filler':
+    material: oraxen:menu_empty
+    display_name: ' '
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 22
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+      - 44
+  'buy_rubles':
+    display_name: '&#FF5700&lК&#FD5600&lу&#FB5600&lп&#F95500&lи&#F85500&lт&#F65400&lь &#F25300&lз&#F05200&lа &#ED5100&lк&#EB5000&lр&#E95000&lо&#E74F00&lн&#E74F00&lы'
+    slot: 21
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmNzRlYjg4MThlOTllOWE0MjY5MWZlM2I1MWM2YjhkOGQ1ZWZmMDY2ZWMwMGNhYjAwMzYyNDViNmRmYTVkMyJ9fX0=
+    left_click_commands:
+      - '[openguimenu] donateRESEURO'
+    right_click_commands:
+      - '[openguimenu] donateRESEURO'
+
+  'buy_monets':
+    display_name: '&#FF5700&lК&#FD5600&lу&#FC5600&lп&#FA5500&lи&#F95500&lт&#F75400&lь &#F45300&lз&#F25300&lа &#EF5200&lм&#ED5100&lо&#EC5100&lн&#EA5000&lе&#E95000&lт&#E74F00&lы'
+    slot: 23
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTRhZWFiMDFjMDRmMzZiYTg4N2I3YmRhOGQ5YzUzOGJjOTY4NmRiYmNlN2UzYTViYjEwZjMwOGM1MDMwMmJjNCJ9fX0=
+    left_click_commands:
+      - '[openguimenu] donateRESMONETA'
+    right_click_commands:
+      - '[openguimenu] donateRESMONETA'
+
+  'back_button':
+    display_name: '&#FF5700В&#FE5700е&#FC5600р&#FB5600н&#F95500у&#F85500т&#F65400ь&#F55400с&#F35300я &#F05200о&#EF5200б&#ED5100р&#EC5100а&#EA5000т&#E95000н&#E74F00о'
+    slot: 40
+    material: spectral_arrow
+    lore:
+      - '&r&#aaaaaaНажмите, чтобы вернуться&r'
+      - '&r&#aaaaaaв обратное меню.&r'
+    left_click_commands:
+      - '[openguimenu] donateSHOP'
+    right_click_commands:
+      - '[openguimenu] donateSHOP'
