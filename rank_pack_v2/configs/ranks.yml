@@ -1,0 +1,102 @@
+info:
+  namespace: wellsetups_ranks
+font_images:
+
+##########
+# STAFFS / OWNER
+##########
+
+  wellsetups_ranks_owner:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_owner.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_admin:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_admin.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_dadmin:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_dadmin.png"
+    scale_ratio: 10
+    y_position: 8
+
+##########
+# CUSTOM RANKS
+##########
+
+  wellsetups_ranks_solomon:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_solomon.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_osiris:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_osiris.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_phonix:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_phonix.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_nebula:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_nebula.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_triton:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_triton.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_hydra:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_hydra.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_aqua:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_aqua.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_morph:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_morph.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_axolot:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_axolot.png"
+    scale_ratio: 10
+    y_position: 8
+
+  wellsetups_ranks_vernal:
+    show_in_gui: true
+    suggest_in_command: false
+    path: "wellsetups_ranks_vernal.png"
+    scale_ratio: 10
+    y_position: 8
