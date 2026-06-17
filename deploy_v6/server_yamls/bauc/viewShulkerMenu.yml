@@ -1,0 +1,14 @@
+menu_title: "&f௫௧"
+size: 35
+type: CHEST
+provider: viewShulker
+id: viewShulker
+
+items:
+  categories:
+    material: BARRIER
+    slot: 31
+    amount: 1
+    display_name: "&cНазад"
+    click_commands:
+      - '[BACK_OR_CLOSE]'

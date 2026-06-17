@@ -1,0 +1,72 @@
+menu_title: "ெ"
+open_command:
+- menu
+- menus
+open_commands:
+  - '[sound] BLOCK_BARREL_OPEN'
+register_command: true
+size: 54
+items:
+  '13':
+    display_name: '&#FF5700Ивенты'
+    slot: 13
+    material: BEACON
+    left_click_commands:
+      - '[player] event'
+  '20':
+    display_name: '&#FF5700Скупщик'
+    slot: 20
+    material: HOPPER_MINECART
+    left_click_commands:
+      - '[player] seller'
+  '22':
+    display_name: '&#FF5700ПвпАрена'
+    slot: 22
+    material: DIAMOND_SWORD
+    item_flags:
+      - HIDE_ENCHANTS
+      - HIDE_ATTRIBUTES
+    left_click_commands:
+      - '[player] warp pvp'
+  '24':
+    display_name: '&#FF5700Обменник'
+    slot: 24
+    material: GOLD_NUGGET
+    left_click_commands:
+      - '[player] obmen'
+  '29':
+    display_name: '&#FF5700Порталы'
+    slot: 29
+    material: END_PORTAL_FRAME
+    left_click_commands:
+      - '[player] portals'
+  '31':
+    display_name: '&#FF5700АФК'
+    slot: 31
+    material: CAMPFIRE
+    left_click_commands:
+      - '[player] warp afk'
+  '33':
+    display_name: '&#FF5700Кейсики'
+    slot: 33
+    material: ENDER_CHEST
+    left_click_commands:
+      - '[player] warp case'
+  '48':
+    display_name: '&#FF5700Награды'
+    slot: 48
+    material: CHEST_MINECART
+    left_click_commands:
+      - '[player] free'
+  '49':
+    display_name: '&#FF5700Донат'
+    slot: 49
+    material: FIRE_CHARGE
+    left_click_commands:
+      - '[player] donate'
+  '50':
+    display_name: '&#FF5700Магазины'
+    slot: 50
+    material: PUFFERFISH
+    left_click_commands:
+      - '[player] shop'

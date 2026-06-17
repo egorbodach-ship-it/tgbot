@@ -1,0 +1,18 @@
+language: RUSSIAN
+debug:
+  enabled: false
+datastorage: default
+sql:
+  host: localhost
+  username: root
+  password: ''
+  database: 
+  alwaysUnloadOnExit: true
+shitty_sync:
+  enabled: false
+  host: localhost
+  port: 40004
+groups:
+- admin
+- default
+- curator
