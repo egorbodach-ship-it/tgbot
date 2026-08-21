@@ -1,0 +1,11 @@
+name: BrainrotSpawner
+version: '${project.version}'
+main: Polfg.Polfg.BrainrotSpawner
+api-version: '1.20'
+author: Polfg
+softdepend: [Vault, FancyHolograms]
+commands:
+  brainrotspawn:
+    description: Spawn a brainrot mob
+  brainrotspawner:
+    description: Manage brainrot spawners
